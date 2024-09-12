@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    
+    height: 100%;
+}
+
+.header {
+    height:150px;
+}
+
+.section1 {
+    background-color: #fff;
+    height:50%;
+     
+}
+.section2 {
+    position: relative;
+    background-color: red;
+    height:50%;
+    display:flex;
+    justify-content: center;
+}
+.back-home {
+    position: absolute;
+    left:7%;
+    top: 25%;
+    height:50%;
+    
+}
+.logotop {
+    display:flex;
+    padding:0;
+    justify-content: center;
+    list-style-type:none ;
+    background-color: none;
+    height: 100%;
+    margin:0;
+}
+.chucnang {
+    
+    list-style-type:none ;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.li1 {
+    height:100%;
+    width: auto; 
+}
+
+.main {
+    background-color: white;
+    height: 700px;
+}
+
+.thongtin {
+    position: relative;
+    display:flex; 
+    justify-content: center;
+    align-items: center;
+    padding: 0px 50px;    
+}
+
+.link-thongtin {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16;
+    text-transform:none;
+    font-weight: bold;
+}
+
+.sub-thongtin {
+    list-style-type: none;
+    position: absolute;
+    top: 100%;
+    left:0;
+    right:0;
+    padding:10px 0 10px 0  ;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    display: none;
+    
+}
+
+.thongtin:hover {
+    background-color: black;
+}
+
+.sub-thongtin li {
+    margin: 10px;
+}
+.sub-thongtin li a {
+    
+    color:#fff;
+    text-decoration: none;
+    
+    text-transform: none; 
+    font-weight: bold;
+}
+
+.thongtin:hover .sub-thongtin  {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-thongtin li a:hover{
+    text-decoration:underline;
+    text-decoration-color: red;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+.truongdua {
+    height:100%;
+    margin: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px 0 50px;
+}
+.truongdua:hover{
+    background-color: black;
+}
