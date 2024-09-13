@@ -126,3 +126,50 @@ body {
 .truongdua:hover{
     background-color: black;
 }
+.p-f1-driver {
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: bold;
+    font-size: 40px;
+    background-color: none;
+    margin: 0 0 0 0;
+    padding: 20px 0 20px 0 ;
+}
+.sec-f1-driver {
+    width:100%;
+    padding: 0 0 0 0;
+    height: 400px;
+    
+    background-color: none;
+}
+.sec-f1-driver ul {
+    height:100%;
+    margin: 0 0 30px 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    list-style-type: none;
+    background-color: none;
+}
+.sec-f1-driver ul li {
+    height:100%;
+    width: 20%;
+    margin: 0 0 0 30px;
+    background-color: black;
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 0 0 0 0;
+}
+.sec-f1-driver ul li:hover {
+    border-color: red;
+    height: 110%;
+}
+.sec-f1-driver ul li a {
+    height: 100%;
+    width: 100%;
+}
+.img-f1-driver {
+    height: 100%;
+    width: 100%;
+}
