@@ -126,7 +126,7 @@ body {
 .truongdua:hover{
     background-color: black;
 }
-.p-f1-driver {
+.p1-f1-driver {
     display:flex;
     justify-content: center;
     align-content: center;
@@ -140,7 +140,7 @@ body {
     width:100%;
     padding: 0 0 0 0;
     height: 400px;
-    
+    display:none;
     background-color: none;
 }
 .sec-f1-driver ul {
@@ -156,20 +156,36 @@ body {
     height:100%;
     width: 20%;
     margin: 0 0 0 30px;
-    background-color: black;
+    background-color: none;
     border: 1px solid black;
     box-sizing: border-box;
     padding: 0 0 0 0;
+    display:flex;
+    flex-direction: column;
+    
 }
 .sec-f1-driver ul li:hover {
     border-color: red;
-    height: 110%;
+    height:110%;
+    
 }
 .sec-f1-driver ul li a {
+    background-color: none;
+    left:10%;
+    height: 90%;
+    width: 100%;
+}
+.sec-f1-driver ul li a img {
+    margin: 0 0 0 0;
     height: 100%;
     width: 100%;
 }
-.img-f1-driver {
-    height: 100%;
-    width: 100%;
+.sec-f1-driver ul li p {
+    margin: 0 0 0 0;
+    height: 10%;
+    width:  100%;
+    font-size: 20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
