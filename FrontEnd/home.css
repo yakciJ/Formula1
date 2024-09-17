@@ -28,6 +28,9 @@ body {
     height:50%;
     
 }
+.back-home:hover {
+    height:55%;
+}
 .logotop {
     display:flex;
     padding:0;
@@ -54,7 +57,7 @@ body {
 
 .main {
     background-color: white;
-    height: 700px;
+    height: 630px;
 }
 
 .thongtin {
@@ -126,6 +129,20 @@ body {
 .truongdua:hover{
     background-color: black;
 }
+
+.sec-home {
+    display:none;
+    width:100%;
+    height:630px;
+    margin:0;
+    padding:0;
+}
+.sec-home img {
+    height:100%;
+    width:100%;
+    padding:0;
+}
+
 .sec-f1-driver p {
     display:flex;
     justify-content: center;

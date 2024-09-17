@@ -6,6 +6,7 @@ document.getElementById('tay-dua').addEventListener('click', function(event) {
   document.getElementById('sec-f1-driver').style.display = 'block';
 });
 
+
 document.querySelector('body>header>section #doi-dua').addEventListener('click', function(event) {
   event.preventDefault();
   document.querySelectorAll('body > main > section').forEach(function(section) { 
@@ -15,4 +16,10 @@ document.querySelector('body>header>section #doi-dua').addEventListener('click',
 });
 
 
-
+document.querySelector('body>header>section #back-home').addEventListener('click',function(event){
+  event.preventDefault();
+  document.querySelectorAll('body > main > section').forEach(function(section) { 
+    section.style.display = 'none';
+  });
+  document.querySelector('body > main #sec-home').style.display = 'block'; 
+})
