@@ -1,25 +1,22 @@
-document.getElementById('tay-dua').addEventListener('click', function(event) {
-  event.preventDefault();
+function show_Section(section_Id) {
   document.querySelectorAll('body > main > section').forEach(function(section) {
     section.style.display = 'none';
   });
-  document.getElementById('sec-f1-driver').style.display = 'block';
-});
+  document.querySelector('body > main #' + section_Id).style.display = 'block';
+}
 
+document.getElementById('tay-dua').addEventListener('click', function(event) {
+  event.preventDefault();
+  show_Section('sec-f1-driver');
+});
 
 document.querySelector('body>header>section #doi-dua').addEventListener('click', function(event) {
   event.preventDefault();
-  document.querySelectorAll('body > main > section').forEach(function(section) { 
-    section.style.display = 'none';
-  });
-  document.querySelector('body > main #sec-f1-team').style.display = 'block'; 
+  show_Section('sec-f1-team');
 });
 
-
-document.querySelector('body>header>section #back-home').addEventListener('click',function(event){
+document.querySelector('body>header>section #back-home').addEventListener('click', function(event){
   event.preventDefault();
-  document.querySelectorAll('body > main > section').forEach(function(section) { 
-    section.style.display = 'none';
-  });
-  document.querySelector('body > main #sec-home').style.display = 'block'; 
-})
+  show_Section('sec-home');
+});
+
