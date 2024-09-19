@@ -1,14 +1,21 @@
-const express = require('express');
-const path = require('path');
-const app = express();
-const port = 3001;
-// Serve static files from the 'FrontEnd' directory
-app.use(express.static(path.join(__dirname, 'FrontEnd')));
-app.use('/Image', express.static(path.join(__dirname, 'Image'))); // Serve images from 'Image' directory
-// Serve the main HTML file
+const express = require('express'); // thư viện ẽxpress để tạo ứng dụng web
+const path = require('path');       // thư viện để làm việc đường dẫn
+const app = express();              // ứng dụng express
+const port = 3001;                  // cổng
+
+// đường dẫn
+
+app.use('/FrontEnd',express.static(path.join(__dirname,'FrontEnd')));
+
+app.use('/BackEnd',express.static(path.join(__dirname,'BackEnd')));
+
+app.use('/Image',express.static(path.join(__dirname,'Image')));
+//
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'FrontEnd', 'home.html'));
+    res.sendFile(path.join(__dirname, 'FrontEnd','Home', 'home.html'));
 });
+
+
 
 // API route to serve JSON data
 app.get('/api/data', (req, res) => {
