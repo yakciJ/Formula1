@@ -12,7 +12,8 @@ var con = database.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    port: 3306
+    port: 3306,
+    database: "formula1"
 });
 
 module.exports = function (app) {
@@ -27,16 +28,10 @@ module.exports = function (app) {
 
     // Connect to db
     app.get('/connect', (req, res) => {
-        con.connect(function(err) {
+        var connection = con.connect(function(err) {
             if (err) throw err;
             console.log("Connected!");
         });
-        
     });
 }
-
-
-
-
-
-
+// dm son

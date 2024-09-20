@@ -19,6 +19,7 @@ if(cluster.isMaster){
     
     });
 } 
+// Bat dau code trong else tu day. Ke phan tren di.
 else
 {
     const exp = require('constants');
