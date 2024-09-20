@@ -1,11 +1,10 @@
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     height: 100%;
 }
 
-                                                        /* phần HEADER */
+                                                        /*  HEADER */
 /* LOGO-TOP */
 
 .header {
@@ -40,7 +39,7 @@ body {
     height:55%;
 }
 
-/* 5 nút chức năng */
+/* 5 NÚT CHỨC NĂNG */
 
 .section2 {
     position: relative;
@@ -137,7 +136,7 @@ body {
 
 
 
-                                                          /* phần MAIN */
+                                                          /*  MAIN */
 
  /* Tay Đua */
 .main {
@@ -209,16 +208,16 @@ body {
     align-items: center;
 }
 
-/* Info Tay Đua */
+/* INFO TAY ĐUA */
 .sec-f1-driver-info  {
     display: flex;
     justify-content: center;
-    align-items: center;
     width:100%;
     height:630px;
     background-color: none;
     padding:0;
     margin:0;
+    gap:50px;
 }
 
 .sec-f1-driver-info ul {
@@ -227,19 +226,57 @@ body {
     background-color: none;
     width: 40%;
     height:100%;
+    display:flex;
+    flex-direction: column;
 }
 
-.sec-f1-driver-info table {
-    background-color: blue;
-    width:40%;
-    height:100%;
+.sec-f1-driver-info ul b {
     margin:0;
-    padding:0;
+    padding: 0;
+    background-color: aqua;
+    width:100%;
+    height: 20%;
+    display: flex; /* Add this line */
+    justify-content: center; /* Add this line */
+    align-items: center;
+    font-size: 50px;
 }
+
 .sec-f1-driver-info ul img {
     margin:0;
     padding: 0;
     width: 100%;
     height: 80%;
-    background-color: aqua;
+    background-color:#154c79;
 }
+
+.sec-f1-driver-info table {
+    background-color: none; 
+    width: 40%;
+    margin: 0; 
+    padding:0;
+    border-collapse: collapse; 
+    font-family: Arial, sans-serif; 
+    height:100%;
+    display:table;
+}
+
+.sec-f1-driver-info table tr {
+    padding:0;
+    margin:0;
+    background-color: none;
+}
+.sec-f1-driver-info table tr th, .sec-f1-driver-info table tr td {
+    border: 1px solid black; 
+    padding: 0; 
+    text-align: center;
+    margin:0; 
+    box-sizing: border-box;
+    width:50%;
+}
+
+.sec-f1-driver-info th {
+    font-weight: bold;
+    background-color: #ddd; 
+}
+
