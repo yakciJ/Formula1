@@ -4,41 +4,39 @@ body {
     height: 100%;
 }
 
-/*  HEADER */
+                                                        /*  HEADER */
 /* LOGO-TOP */
 
 .header {
-    height: 150px;
+    height:150px;
 }
 
 .section1 {
     background-color: #fff;
-    height: 50%;
-
+    height:50%;
+     
 }
-
 .logotop {
-    display: flex;
-    padding: 0;
+    display:flex;
+    padding:0;
     justify-content: center;
-    list-style-type: none;
+    list-style-type:none ;
     background-color: none;
     height: 100%;
-    margin: 0;
+    margin:0;
 }
 
 /* nút Home */
 
 .back-home {
     position: absolute;
-    left: 7%;
+    left:7%;
     top: 25%;
-    height: 50%;
-
+    height:50%;
+    
 }
-
 .back-home:hover {
-    height: 55%;
+    height:55%;
 }
 
 /* 5 NÚT CHỨC NĂNG */
@@ -46,39 +44,39 @@ body {
 .section2 {
     position: relative;
     background-color: red;
-    height: 50%;
-    display: flex;
+    height:50%;
+    display:flex;
     justify-content: center;
 }
 
 
 .chucnang {
-    list-style-type: none;
+    list-style-type:none ;
     height: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
-
+    
 }
 
 .li1 {
-    height: 100%;
-    width: auto;
+    height:100%;
+    width: auto; 
 }
 
 .thongtin {
     position: relative;
-    display: flex;
+    display:flex; 
     justify-content: center;
     align-items: center;
-    padding: 0px 50px;
+    padding: 0px 50px;    
 }
 
 .link-thongtin {
     color: #fff;
     text-decoration: none;
     font-size: 16;
-    text-transform: none;
+    text-transform:none;
     font-weight: bold;
 }
 
@@ -86,14 +84,14 @@ body {
     list-style-type: none;
     position: absolute;
     top: 100%;
-    left: 0;
-    right: 0;
-    padding: 10px 0 10px 0;
+    left:0;
+    right:0;
+    padding:10px 0 10px 0  ;
     justify-content: center;
     align-items: center;
     background-color: black;
     display: none;
-
+    
 }
 
 .thongtin:hover {
@@ -103,72 +101,67 @@ body {
 .sub-thongtin li {
     margin: 10px;
 }
-
 .sub-thongtin li a {
-
-    color: #fff;
+    
+    color:#fff;
     text-decoration: none;
-
-    text-transform: none;
+    
+    text-transform: none; 
     font-weight: bold;
 }
 
-.thongtin:hover .sub-thongtin {
+.thongtin:hover .sub-thongtin  {
     display: flex;
     flex-direction: column;
 }
 
-.sub-thongtin li a:hover {
-    text-decoration: underline;
+.sub-thongtin li a:hover{
+    text-decoration:underline;
     text-decoration-color: red;
     text-underline-offset: 4px;
     text-decoration-thickness: 2px;
 }
 
 .truongdua {
-    height: 100%;
+    height:100%;
     margin: 0;
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
     padding: 0 50px 0 50px;
 }
-
-.truongdua:hover {
+.truongdua:hover{
     background-color: black;
 }
 
 
 
-/*  MAIN */
+                                                          /*  MAIN */
 
-/* Tay Đua */
+ /* Tay Đua */
 .main {
     background-color: white;
     height: 630px;
 }
-
 .sec-f1-driver p {
-    display: flex;
+    display:flex;
     justify-content: center;
     align-content: center;
     font-weight: bold;
     font-size: 40px;
     background-color: none;
     margin: 0 0 0 0;
-    padding: 20px 0 20px 0;
+    padding: 20px 0 20px 0 ;
 }
-
 .sec-f1-driver {
-    width: 100%;
+    width:100%;
     padding: 0 0 0 0;
     height: 400px;
     display: none;
     background-color: none;
 }
-
 .sec-f1-driver ul {
-    height: 100%;
+    height:100%;
     margin: 0 0 30px 0;
     justify-content: center;
     align-items: center;
@@ -176,9 +169,8 @@ body {
     list-style-type: none;
     background-color: none;
 }
-
 .sec-f1-driver ul li {
-    height: 100%;
+    height:100%;
     width: 20%;
     margin: 0 0 0 30px;
     background-color: none;
@@ -186,110 +178,105 @@ body {
     border-radius: 10px;
     box-sizing: border-box;
     padding: 0 0 0 0;
-    display: flex;
+    display:flex;
     flex-direction: column;
-
+    
 }
-
 .sec-f1-driver ul li:hover {
     border-color: red;
-    height: 110%;
-
+    height:110%;
+    
 }
-
 .sec-f1-driver ul li a {
     background-color: none;
-    left: 10%;
+    left:10%;
     height: 90%;
     width: 100%;
 }
-
 .sec-f1-driver ul li a img {
     margin: 0 0 0 0;
     height: 100%;
     width: 100%;
 }
-
 .sec-f1-driver ul li p {
     margin: 0 0 0 0;
     height: 10%;
-    width: 100%;
+    width:  100%;
     font-size: 20px;
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
 }
 
 /* INFO TAY ĐUA */
-.sec-f1-driver-info {
+.sec-f1-driver-info  {
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 630px;
+    width:100%;
+    height:630px;
     background-color: none;
-    padding: 0;
-    margin: 0;
-    gap: 50px;
+    padding:0;
+    margin:0;
+    gap:50px;
 }
 
 .sec-f1-driver-info ul {
-    margin: 0;
+    margin:0;
     padding: 0;
     background-color: none;
     width: 40%;
-    height: 100%;
-    display: flex;
+    height:100%;
+    display:flex;
     flex-direction: column;
 }
 
 .sec-f1-driver-info ul b {
-    margin: 0;
+    margin:0;
     padding: 0;
     background-color: aqua;
-    width: 100%;
+    width:100%;
     height: 20%;
-    display: flex;
-    justify-content: center;
+    display: flex; /* Add this line */
+    justify-content: center; /* Add this line */
     align-items: center;
     font-size: 50px;
 }
 
 .sec-f1-driver-info ul img {
-    margin: 0;
+    margin:0;
     padding: 0;
     width: 100%;
     height: 80%;
-    background-color: #154c79;
+    background-color:#154c79;
 }
 
 .sec-f1-driver-info table {
-    background-color: none;
+    background-color: none; 
     width: 40%;
-    margin: 0;
-    padding: 0;
-    border-collapse: collapse;
-    font-family: Arial, sans-serif;
-    height: 100%;
-    display: table;
+    margin: 0; 
+    padding:0;
+    border-collapse: collapse; 
+    font-family: Arial, sans-serif; 
+    height:100%;
+    display:table;
 }
 
 .sec-f1-driver-info table tr {
-    padding: 0;
-    margin: 0;
+    padding:0;
+    margin:0;
     background-color: none;
 }
-
-.sec-f1-driver-info table tr th,
-.sec-f1-driver-info table tr td {
-    border: 1px solid black;
-    padding: 0;
+.sec-f1-driver-info table tr th, .sec-f1-driver-info table tr td {
+    border: 1px solid black; 
+    padding: 0; 
     text-align: center;
-    margin: 0;
+    margin:0; 
     box-sizing: border-box;
-    width: 50%;
+    width:50%;
 }
 
 .sec-f1-driver-info th {
     font-weight: bold;
-    background-color: #ddd;
+    background-color: #ddd; 
 }
+
