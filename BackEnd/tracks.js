@@ -13,7 +13,7 @@ var con = database.createConnection({
     user: "root",
     password: "",
     port: 3306,
-    database: "f1"
+    database: "formula1"
 });
 
 module.exports = function (app) {
@@ -28,17 +28,10 @@ module.exports = function (app) {
 
     // Connect to db
     app.get('/connect', (req, res) => {
-        con.connect(function(err) {
+        var connection = con.connect(function(err) {
             if (err) throw err;
             console.log("Connected!");
         });
     });
-        con.query('SELECT * from tracks', function(err, result, fields) {
-            if (err) {
-                console.log('Error while performing Query.');
-            } else {
-                res.send(result);
-            }
-        });
-    })
 }
+// dm son
