@@ -4,9 +4,21 @@ function show_Section(section_Id) {
     });
     document.querySelector('body > main #' + section_Id).style.display = 'block';
   }
-  
- 
-  
-  
-  
-  
+
+const mysql = require('mysql2');
+
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'wquqwyresw982',
+  database: 'sys'
+});
+
+db.connect((err) => {
+  if (err) {
+    console.error('Kết nối thất bại: ', err.stack);
+    return;
+  }
+  console.log('Đã kết nối đến cơ sở dữ liệu với id: ' + db.threadId);
+});
+
