@@ -33,6 +33,7 @@ module.exports = function (app) {
             console.log("Connected!");
         });
     });
+    app.get('/fetchData', (req, res) => {
         con.query('SELECT * from tracks', function(err, result, fields) {
             if (err) {
                 console.log('Error while performing Query.');

@@ -145,9 +145,8 @@ body{
 }
 
 #footer{
-    display: flex;
     width: 100%;
-    height: 5vw;
+    height: 100%;
     background-color: black;
     color: white;
 }
@@ -179,4 +178,13 @@ body{
     margin: 0.3vw;
     width: 2vw;
     height: 2vw;
+    border:1px solid rgb(255, 255, 255);
+    padding: 1px;
+}
+
+#copy-right{
+    position: absolute;
+    right: 0;
+    margin-right: 4vw;
+    font-size: 1vw;
 }

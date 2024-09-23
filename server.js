@@ -3,6 +3,7 @@ var cluster = require('cluster');
 if(cluster.isMaster){
 
     // Count the machine's CPUs
+    var crashed = 0;
     var cpuCount = require('os').cpus().length;
 
     // Create a worker for each CPU
@@ -11,12 +12,11 @@ if(cluster.isMaster){
     }
 
     cluster.on('exit', function (worker) {
-
+        crashed++;
         // Replace the dead worker,
         // we're not sentimental
-        console.log('Worker %d died :(', worker.id)+'. Reset server!';
+        console.log('Server crashed times %d :(. Reset server!', crashed);
         cluster.fork();
-    
     });
 } 
 // Bat dau code trong else tu day. Ke phan tren di.
