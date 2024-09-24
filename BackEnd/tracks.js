@@ -7,7 +7,7 @@ const app = express();
 var database = require('mysql');
 var FrontEnd = __dirname+'/../FrontEnd';
 app.set("view engine", "ejs")
-//Connect to database. Need: npm install mysql
+//Connect to database.
 var con = database.createConnection({
     host: "localhost",
     user: "root",
@@ -32,6 +32,5 @@ module.exports = function (app) {
                 res.render(path.join(FrontEnd, 'Tracks', 'tracks.ejs'), {result: result});
             }
         });
-        
     })
 }

@@ -142,7 +142,7 @@ body{
 
 #main-content{
     margin-top: 10vw;
-    margin-bottom: 8vw;
+    margin-bottom: 3vw;
 }
 
 .row{
@@ -162,6 +162,10 @@ body{
     width: 16vw;
 }
 
+.tracks:hover{
+    border: 0.5vw solid red;
+}
+
 .tracks-basic{
     height: 12vw;
 }
@@ -177,8 +181,6 @@ body{
     width: 100%;
     background-color: black;
     color: white;
-    position: fixed;
-    bottom: 0;
 }
 
 #app-download{
