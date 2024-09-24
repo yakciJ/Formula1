@@ -6,7 +6,7 @@ const app = express();
 
 var database = require('mysql');
 var FrontEnd = __dirname+'/../FrontEnd';
-
+app.set("view engine", "ejs")
 //Connect to database. Need: npm install mysql
 var con = database.createConnection({
     host: "localhost",
@@ -17,13 +17,10 @@ var con = database.createConnection({
 });
 
 module.exports = function (app) {
-    app.get('/test', function(req, res) {
-        res.json(200, {'test': 'it works!'})
-    });
 
     // To the tracks page
     app.get('/duong-dua', (req, res) => {
-        res.sendFile(path.join(FrontEnd, 'Tracks', 'tracks.html'));
+        res.sendfile(path.join(FrontEnd, 'Tracks', 'tracks.html'));
     });
 
     // Connect to db
@@ -41,5 +38,9 @@ module.exports = function (app) {
                 res.send(result);
             }
         });
+    })
+
+    app.get('/test', (req,res) => {
+        res.render(path.join(FrontEnd, 'Tracks', 'tracks.ejs'));
     })
 }
