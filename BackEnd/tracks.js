@@ -18,29 +18,20 @@ var con = database.createConnection({
 
 module.exports = function (app) {
 
-    // To the tracks page
-    app.get('/duong-dua', (req, res) => {
+    // test html
+    app.get('/testhtml', (req, res) => {
         res.sendfile(path.join(FrontEnd, 'Tracks', 'tracks.html'));
     });
 
-    // Connect to db
-    app.get('/connect', (req, res) => {
-        con.connect(function(err) {
-            if (err) throw err;
-            console.log("Connected!");
-        });
-    });
-    app.get('/fetchData', (req, res) => {
-        con.query('SELECT * from tracks', function(err, result, fields) {
+    // render tracks.ejs
+    app.get('/duong-dua', (req,res) => {
+        con.query('SELECT Name, BasicImage from tracks', function(err, result, fields) {
             if (err) {
                 console.log('Error while performing Query.');
             } else {
-                res.send(result);
+                res.render(path.join(FrontEnd, 'Tracks', 'tracks.ejs'), {result: result});
             }
         });
-    })
-
-    app.get('/test', (req,res) => {
-        res.render(path.join(FrontEnd, 'Tracks', 'tracks.ejs'));
+        
     })
 }
