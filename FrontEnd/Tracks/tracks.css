@@ -174,7 +174,7 @@ body{
     margin-top: 1vw;
 }
 
-#social-link img{
+#social-link a img{
     margin: 0.3vw;
     width: 2vw;
     height: 2vw;
