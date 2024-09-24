@@ -3,18 +3,11 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+//lấy db
+const con = require('./db'); 
 
-var database = require('mysql');
 var FrontEnd = __dirname+'/../FrontEnd';
-app.set("view engine", "ejs")
-//Connect to database.
-var con = database.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    port: 3306,
-    database: "f1"
-});
+app.set("view engine", "ejs");
 
 module.exports = function (app) {
 
