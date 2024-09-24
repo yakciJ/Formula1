@@ -27,9 +27,7 @@ else
     const path = require('path');
     const app = express();
     const port = 6969;
-    
-    var database = require('mysql');
-    var FrontEnd = __dirname+'/FrontEnd';
+
     
     // Serve static files from the directories
     app.use('/FrontEnd', express.static(path.join(__dirname, 'FrontEnd')));

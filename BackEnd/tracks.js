@@ -33,4 +33,8 @@ module.exports = function (app) {
             }
         });
     })
+
+    app.get('/thay=ten-duong-dua', (req,res) => {
+        res.render(path.join(FrontEnd, 'Tracks', 'track.ejs'));
+    })
 }

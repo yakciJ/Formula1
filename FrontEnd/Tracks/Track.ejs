@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="Image/Static/F1-logo.png" />
     <link rel="stylesheet" href="FrontEnd/Tracks/tracks.css">
-    <title>Trường đua</title>
+    <title>Thay bằng tên đường đua</title>
 </head>
 
 
@@ -37,16 +37,7 @@
         </section>
     </header>
     <div id="main-content">
-            <% for (let i = 0; i < result.length; i+=4){ %>
-                <div class="row">
-                <% for (let j = i; j < i+4; j++){ %>
-                    <a href="/thay=ten-duong-dua" class="tracks">
-                        <img class="tracks-basic" src="<%= result[j].BasicImage %>" alt="">
-                        <div class="tracks-name"><%= result[j].Name %></div>    
-                    </a>
-                <% } %>
-                </div>
-            <% } %>
+
     </div>
     
     
