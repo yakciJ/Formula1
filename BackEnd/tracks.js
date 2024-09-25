@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 
 //lấy db
-const con = require('./db'); 
+const con = require('./dbcon'); 
 
 var FrontEnd = __dirname+'/../FrontEnd';
 app.set("view engine", "ejs");
