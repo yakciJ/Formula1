@@ -38,11 +38,13 @@ else
     
     
     // Start the server
+    
+    
+    
     app.listen(port, () => {
         console.log(`Server is running on http://localhost:${port}`);
     });
-    
-    // Connect to backend tracks.js
     require(path.join(__dirname, '/BackEnd/tracks.js'))(app);
+    require(path.join(__dirname, '/BackEnd/raceresults.js'))(app);
 }
 
