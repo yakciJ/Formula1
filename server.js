@@ -22,15 +22,17 @@ if(cluster.isMaster){
 // Bat dau code trong else tu day. Ke phan tren di.
 else
 {
+    const exp = require('constants');
     const express = require('express');
     const path = require('path');
     const app = express();
     const port = 6969;
 
-
+    
     // Serve static files from the directories
     app.use('/FrontEnd', express.static(path.join(__dirname, 'FrontEnd')));
     app.use('/Image', express.static(path.join(__dirname, 'Image')));
+    app.use('/BackEnd', express.static(path.join(__dirname, 'BackEnd')))
     // Serve the main HTML file
     app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, 'FrontEnd', 'Home', 'home.html'));
@@ -38,13 +40,11 @@ else
     
     
     // Start the server
-    
-    
-    
     app.listen(port, () => {
         console.log(`Server is running on http://localhost:${port}`);
     });
+    
+    // Connect to backend tracks.js
     require(path.join(__dirname, '/BackEnd/tracks.js'))(app);
-    require(path.join(__dirname, '/BackEnd/raceresults.js'))(app);
 }
 
