@@ -7,4 +7,4 @@ var con = database.createConnection({
     port: 3306,
     database: "f1"
 });
-module.exports =con;
+module.exports = con.promise();
