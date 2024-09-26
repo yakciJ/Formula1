@@ -1,28 +1,16 @@
-function show_Section(section_Id) {
-  document.querySelectorAll('body > main > section').forEach(function (section) {
-    section.style.display = 'none';
-  });
-  document.querySelector('body > main #' + section_Id).style.display = 'block';
-}
-
-const db = require('./dbdriver');
-const express = require('express');
-const app = express();
-const path = require('path');
-
-
-module.exports = function (app) {
-  app.get('/driver', (req, res) => {
-    res.sendFile(path.join(__dirname + '../../FrontEnd', 'Driver', 'driver.html'));
-  });
-
-  app.get('/driver/data', (req, res) => {
-    db.query("SELECT * FROM DRIVER WHERE NAME='Max Verstappen'", (err, results) => {
-      if (err) {
-        console.log("Có lỗi: "+ err); 
-      }
-      res.json(results);
-    });
-  });
-}
-
+fetch('/driver/data')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('info-img').src = data[0]?.IMG_URL; 
+            document.getElementById('info-name').innerText = data[0]?.NAME; 
+            document.getElementById('info-team').innerText = data[0]?.TEAM; 
+            document.getElementById('info-country').innerText = data[0]?.COUNTRY; 
+            document.getElementById('info-podiums').innerText = data[0]?.PODIUMS; 
+            document.getElementById('info-points').innerText = data[0]?.POINTS; 
+            document.getElementById('info-grands-prix').innerText = data[0]?.GPE; 
+            document.getElementById('info-championships').innerText = data[0]?.WC; 
+            document.getElementById('info-highest-finish').innerText = data[0]?.HRF; 
+            document.getElementById('info-highest-grid').innerText = data[0]?.HGP; 
+            document.getElementById('info-dob').innerText = data[0]?.BIRTH; 
+            document.getElementById('info-pob').innerText = data[0]?.PLACE; 
+        });
