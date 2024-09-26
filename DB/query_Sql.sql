@@ -95,3 +95,32 @@ INSERT INTO TEAM (FULLNAME, BASE, Team_Chief, Technical_Chief, Chassis, Power_Un
 VALUES
 ('McLaren Formula 1 Team', 'Woking, United Kingdom', 'Andrea Stella', 'Peter Prodromou / Neil Houldey', 'MCL38', 'Mercedes', 1966, 8, '1 (x186)', 161, 169),
 ('Oracle Red Bull Racing', 'Milton Keynes, United Kingdom', 'Christian Horner', 'Pierre Waché', 'RB20', 'Honda RBPT', 1997, 6, '1 (x120)', 105, 98);
+
+use F1;
+ALTER TABLE DRIVER
+ADD COLUMN IMG_URL VARCHAR(255);
+
+UPDATE DRIVER
+SET IMG_URL = CASE ID
+    WHEN 9 THEN '/Image/Racer/alealb01.avif'
+	WHEN 12 THEN '/Image/Racer/carsai01.avif'
+    WHEN 6 THEN '/Image/Racer/chalec01.avif'
+    WHEN 19 THEN '/Image/Racer/danric01.avif'
+    WHEN 11 THEN '/Image/Racer/estoco01.avif'
+    WHEN 13 THEN '/Image/Racer/feralo01.avif'
+    WHEN 17 THEN '/Image/Racer/fracol01.avif'
+    WHEN 3 THEN '/Image/Racer/georus01.avif'
+    WHEN 4 THEN '/Image/Racer/guazho01.avif'
+    WHEN 18 THEN '/Image/Racer/kevmag01.avif'
+    WHEN 2 THEN '/Image/Racer/lannor01.avif'
+    WHEN 16 THEN '/Image/Racer/lanstr01.avif'
+    WHEN 10 THEN '/Image/Racer/lewham01.avif'
+    WHEN 8 THEN '/Image/Racer/yuktsu01.avif'
+    WHEN 20 THEN '/Image/Racer/maxver01.avif'
+    WHEN 14 THEN '/Image/Racer/nichul01.avif'
+    WHEN 5 THEN '/Image/Racer/valbot01.avif'
+    WHEN 7 THEN '/Image/Racer/oscpia01.avif'
+    WHEN 1 THEN '/Image/Racer/piegas01.avif'
+    WHEN 15 THEN '/Image/Racer/serper01.avif'
+    END
+WHERE ID BETWEEN 1 AND 20;

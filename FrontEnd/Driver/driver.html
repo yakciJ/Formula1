@@ -129,8 +129,8 @@
         </section>
         <section class="sec-f1-driver-info"id="sec-f1-driver-info">
             <ul>
-                <img src="/Image/Racer/alealb01.avif">
-                <b>ALEX</b>
+                <img src="" id="info-img">
+                <b id="info-name"></b>
             </ul>
             <table>
                 <tr>
@@ -139,39 +139,39 @@
                 </tr>
                 <tr>
                     <th>Country</th>
-                    <td>Thailand</td>
+                    <td id="info-country"></td> 
                 </tr>
                 <tr>
                     <th>Podiums</th>
-                    <td>2</td>
+                    <td id="info-podiums"></td> 
                 </tr>
                 <tr>
                     <th>Points</th>
-                    <td>240</td>
+                    <td id="info-points"></td> 
                 </tr>
                 <tr>
                     <th>Grands Prix entered</th>
-                    <td>98</td>
+                    <td id="info-grands-prix"></td> 
                 </tr>
                 <tr>
                     <th>World Championships</th>
-                    <td>0</td>
+                    <td id="info-championships"></td> 
                 </tr>
                 <tr>
                     <th>Highest race finish</th>
-                    <td>3 (x2)</td>
+                    <td id="info-highest-finish"></td> 
                 </tr>
                 <tr>
                     <th>Highest grid position</th>
-                    <td>4</td>
+                    <td id="info-highest-grid"></td> 
                 </tr>
                 <tr>
                     <th>Date of birth</th>
-                    <td>23/03/1996</td>
+                    <td id="info-dob"></td> 
                 </tr>
                 <tr>
                     <th>Place of birth</th>
-                    <td>London, England</td>
+                    <td id="info-pob"></td> 
                 </tr>
             </table>
         </section>
@@ -181,7 +181,18 @@
         fetch('/driver/data')
         .then(response => response.json())
         .then(data => {
-            document.getElementById('info-team').innerText = data.team; // Sử dụng dữ liệu từ server
+            document.getElementById('info-img').src = data[0]?.IMG_URL; 
+            document.getElementById('info-name').innerText = data[0]?.NAME; 
+            document.getElementById('info-team').innerText = data[0]?.TEAM; 
+            document.getElementById('info-country').innerText = data[0]?.COUNTRY; 
+            document.getElementById('info-podiums').innerText = data[0]?.PODIUMS; 
+            document.getElementById('info-points').innerText = data[0]?.POINTS; 
+            document.getElementById('info-grands-prix').innerText = data[0]?.GPE; 
+            document.getElementById('info-championships').innerText = data[0]?.WC; 
+            document.getElementById('info-highest-finish').innerText = data[0]?.HRF; 
+            document.getElementById('info-highest-grid').innerText = data[0]?.HGP; 
+            document.getElementById('info-dob').innerText = data[0]?.BIRTH; 
+            document.getElementById('info-pob').innerText = data[0]?.PLACE; 
         });
     </script>
 </body>
