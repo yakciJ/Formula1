@@ -31,6 +31,7 @@ else
     // Serve static files from the directories
     app.use('/FrontEnd', express.static(path.join(__dirname, 'FrontEnd')));
     app.use('/Image', express.static(path.join(__dirname, 'Image')));
+    app.use('/BackEnd', express.static(path.join(__dirname, 'BackEnd')));
     // Serve the main HTML file
     app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, 'FrontEnd', 'Home', 'home.html'));
@@ -46,5 +47,6 @@ else
     });
     require(path.join(__dirname, '/BackEnd/tracks.js'))(app);
     require(path.join(__dirname, '/BackEnd/raceresults.js'))(app);
+    require(path.join(__dirname, '/BackEnd/Driver/driver.js'))(app);
 }
 
