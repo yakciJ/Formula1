@@ -1,24 +1,29 @@
 function show_Section(section_Id) {
-    document.querySelectorAll('body > main > section').forEach(function(section) {
-      section.style.display = 'none';
-    });
-    document.querySelector('body > main #' + section_Id).style.display = 'block';
-  }
+  document.querySelectorAll('body > main > section').forEach(function (section) {
+    section.style.display = 'none';
+  });
+  document.querySelector('body > main #' + section_Id).style.display = 'block';
+}
 
-const mysql = require('mysql2');
+const db = require('./dbcon');
+const express = require('express');
+const app = express();
+const path = require('path'); 
 
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'wquqwyresw982',
-  database: 'sys'
-});
+/*db.query("SELECT * FROM DRIVER WHERE NAME='Max Verstappen'", (err, results) => {
+      
+    });*/ 
 
-db.connect((err) => {
-  if (err) {
-    console.error('Kết nối thất bại: ', err.stack);
-    return;
-  }
-  console.log('Đã kết nối đến cơ sở dữ liệu với id: ' + db.threadId);
-});
+// Endpoint mới để lấy giá trị đội
+module.exports = function (app) {
+  app.get('/driver', (req, res) => {
+    res.sendFile(path.join(__dirname+'/../FrontEnd', 'Driver', 'driver.html'));
+  });
+  app.get('/driver/data', (req, res) => {
+    const data = { team: "abc" }; // Dữ liệu bạn muốn cung cấp
+    res.json(data);
+  });
+}
+
+
 
