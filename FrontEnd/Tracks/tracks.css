@@ -176,6 +176,40 @@ body{
     margin-bottom: 0.5vw;
 }
 
+#main-content2{
+    margin-top: 9vw;
+    margin-bottom: 3vw;
+}
+
+.content{
+    display: flex;
+    border: black solid 0.5vw;
+    width: 90vw;
+    height: 80vh;
+    margin-left: 4.5vw;
+    border-radius: 20px;
+}
+
+.detail-img{
+    width: 60vw;
+    height: 40vw;
+    margin-top: 1vw;
+}
+
+.track-datas{
+    margin: 1.6vw;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: rgb(100, 100, 100) solid 0.2vw;
+}
+
+.title{
+    font-size: 1.5vw;
+}
+
+.track-data{
+    font-size: 2vw;
+    font-weight: bold;
+}
 
 #footer{
     width: 100%;
