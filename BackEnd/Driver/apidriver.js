@@ -13,7 +13,7 @@ const path = require('path');
 
 module.exports = function (app) {
   app.get('/driver', (req, res) => {
-    res.sendFile(path.join(__dirname + '../../FrontEnd', 'Driver', 'driver.html'));
+    res.sendFile(path.join(__dirname + '../../../FrontEnd', 'Driver', 'driver.html'));
   });
 
   app.get('/driver/data', (req, res) => {
