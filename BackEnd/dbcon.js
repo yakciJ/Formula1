@@ -5,6 +5,6 @@ var con = database.createConnection({
     user: "root",
     password: "",
     port: 3306,
-    database: "f1"
+    database: "F1"
 });
-module.exports = con.promise();
+module.exports = con;
