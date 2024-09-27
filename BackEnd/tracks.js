@@ -24,9 +24,10 @@ module.exports = function (app) {
         });
     })
 
-    app.get('/track', (req, res) => {
+    app.get('/duong-dua/:id', (req, res) => {
+        console.log(req.params.id);
         const con = require('./dbcon');
-        con.query('Select Name, BasicImage from tracks', function(err, result, fields){
+        con.query(`Select * from tracks Where ID = '${req.params.id}'`, function(err, result, fields){
             if(err){
                 console.log('Error while performing Query.');
             } else{
@@ -34,5 +35,4 @@ module.exports = function (app) {
             }
         });
     })
-    
 }
