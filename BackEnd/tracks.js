@@ -15,13 +15,13 @@ module.exports = function (app) {
     // render tracks.ejs
     app.get('/duong-dua', async (req,res) => {
         const con = require('./dbcon');
-        try {
-            const [result, fields] = await con.query('Select Name, BasicImage from tracks');
-            res.render(path.join(FrontEnd, 'Tracks', 'tracks.ejs'), {result: result});
-        } catch (error) {
-            console.error('Error while performing Query:' , err);
-            res.status(500).send('Error while performing Query.');
-        }
+        con.query('Select Name, BasicImage from tracks', function(err, result, fields){
+            if(err){
+                console.log('Error while performing Query.');
+            } else{
+                res.render(path.join(FrontEnd, 'Tracks', 'tracks.ejs'), {result: result});
+            }
+        });
     })
 
     app.get('/thay=ten-duong-dua', async (req, res) => {
