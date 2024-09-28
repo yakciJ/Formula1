@@ -6,6 +6,7 @@ function show_Section(section_Id) {
 }
 
 const db = require('../dbcon');
+
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -17,11 +18,13 @@ module.exports = function (app) {
   });
 
   app.get('/driver/data', (req, res) => {
-    db.query("SELECT * FROM DRIVER WHERE NAME='Max Verstappen'", (err, results) => {
+    const driverName = req.query.name;
+    db.query("SELECT * FROM DRIVER WHERE NAME = ?",[driverName], (err, results) => {
       if (err) {
         console.log("Có lỗi: "+ err); 
       }
       res.json(results);
+      
     });
   });
 }
