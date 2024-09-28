@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="Image/Static/F1-logo.png" />
     <link rel="stylesheet" href="FrontEnd/Tracks/tracks.css">
-    <title>Trường đua</title>
+    <link rel="stylesheet" href="FrontEnd/RaceResults/raceresults.css">
+    <title>Kết quả</title>
 </head>
 
 
@@ -34,7 +35,28 @@
                 <li class="truongdua"><a href="/ket-qua" class="link-thongtin">Kết quả</a></li>
                 <li class="truongdua"><a href="#" class="link-thongtin">Xếp hạng</a></li>
             </ul> 
-    </section>
+        </section>
+    </header>
+        <div id="main-content">
+            <label for="raceTrack">RESULTS</label>
+            <form action="/ket-qua" method="POST" >
+                <select name="race">
+                    <option value="1">BAHRAIN</option>
+                    <option value="2">SAUDI ARABIA</option>
+                    <option value="3">AUSTRALIA</option>
+                    <option value="4">JAPAN</option>
+                    <option value="5">CHINA</option>
+                    <option value="6">MIAMI</option>
+                    <option value="7">EMILIA-ROMAGNA</option>
+                    <option value="8">MONACO</option>
+                    <option value="9">CANADA</option>
+                    <option value="10">SPAIN</option>
+                    <option value="11">AUSTRIA</option>
+                    <option value="12">GREAT BRITAIN</option>
+                </select>
+                <button>Summit</button>
+            </form>
+        </div>
         <div id="footer">
             <div style="display: flex;">
                 <div id="app-download">
@@ -58,6 +80,5 @@
                 <div id="copy-right">© 2003-2024 Formula One World Championship Limited</div>
             </div>
         </div>
-    
-    
+  
 </body>
