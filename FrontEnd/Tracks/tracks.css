@@ -176,6 +176,14 @@ body{
     margin-bottom: 0.5vw;
 }
 
+.back{
+    margin-left: 4.5vw;
+    font-size: 2vw; 
+    font-weight: bold; 
+    text-decoration: none;
+    color: black;
+}
+
 #main-content2{
     margin-top: 9vw;
     margin-bottom: 3vw;
@@ -185,14 +193,14 @@ body{
     display: flex;
     border: black solid 0.5vw;
     width: 90vw;
-    height: 80vh;
+    height: 76vh;
     margin-left: 4.5vw;
     border-radius: 20px;
 }
 
 .detail-img{
     width: 60vw;
-    height: 40vw;
+    height: 38vw;
     margin-top: 1vw;
 }
 
