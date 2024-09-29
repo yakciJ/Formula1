@@ -7,24 +7,11 @@
     
 }
 /* Giới hạn chiều cao tối đa của combo box */
-#raceTrack option {
-    max-height: 10px; /* Giới hạn chiều cao của combo box */
-    overflow-y: auto;  /* Tạo thanh cuộn dọc khi danh sách quá dài */
-}
-/* Thanh cuộn cho combo box */
 #raceTrack {
     overflow-y: auto; /* Thanh cuộn dọc */
 }
-#raceTrack option::-webkit-scrollbar {
-    width: 10px;
-}
-#raceTrack option::-webkit-scrollbar-thumb {
-    background-color: #888; /* Màu thanh cuộn */
-    border-radius: 10px;
-}
-#raceTrack option::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Màu khi hover vào thanh cuộn */
-}
-#raceTrack option::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Màu nền của thanh cuộn */
+td {
+    padding: 12px 15px;
+    font-size: 18px; /* Đảm bảo chữ hiển thị lớn */
+    color: #000; /* Đảm bảo màu chữ là đen */
 }

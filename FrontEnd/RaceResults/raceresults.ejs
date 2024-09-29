@@ -39,8 +39,8 @@
     </header>
         <div id="main-content">
             <label for="raceTrack">RESULTS</label>
-            <form action="/ket-qua" method="POST" >
-                <select name="race">
+            <form action="/ket-qua" method="POST" id="raceForm" >
+                <select name="race" onchange="document.getElementById('raceForm').submit()">
                     <option value="1">BAHRAIN</option>
                     <option value="2">SAUDI ARABIA</option>
                     <option value="3">AUSTRALIA</option>
@@ -54,8 +54,37 @@
                     <option value="11">AUSTRIA</option>
                     <option value="12">GREAT BRITAIN</option>
                 </select>
-                <button>Summit</button>
             </form>
+            <% if (typeof results !== 'undefined' && results.length > 0) { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Postition</th>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Car</th>
+                            <th>Laps</th>
+                            <th>Retired</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% results.forEach(result => { %>
+                            <tr>
+                                <td><%= result.POS %></td>
+                                <td><%= result.NO %></td>
+                                <td><%= result.NAME %></td>
+                                <td><%= result.CAR %></td>
+                                <td><%= result.LAPS %></td>
+                                <td><%= result.RETIRED %></td>
+                                <td><%= result.PTS %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>Chưa có kết quả cho cuộc đua này.</p>
+            <% } %>
         </div>
         <div id="footer">
             <div style="display: flex;">
