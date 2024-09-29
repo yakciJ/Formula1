@@ -38,10 +38,10 @@
         </section>
     </header>
         <div id="main-content">
-            <label for="raceTrack">RESULTS</label>
+            <label for="raceTrack" class="font" id ="raceLabel">Kết quả vòng đua</label>
             <form action="/ket-qua" method="POST" id="raceForm" >
-                <select name="race" onchange="document.getElementById('raceForm').submit()">
-                    <option>Chọn tên đường đua</option>
+                <select name="race" id="raceSelect" onchange="updateRaceLabel();document.getElementById('raceForm').submit()">
+                    <option value="" disabled selected >Chọn tên đường đua</option>
                     <option value="1">BAHRAIN</option>
                     <option value="2">SAUDI ARABIA</option>
                     <option value="3">AUSTRALIA</option>
@@ -57,7 +57,7 @@
                 </select>
             </form>
             <% if (typeof results !== 'undefined' && results.length > 0) { %>
-                <table>
+                <table border="1">
                     <thead>
                         <tr>
                             <th>Postition</th>
@@ -110,5 +110,20 @@
                 <div id="copy-right">© 2003-2024 Formula One World Championship Limited</div>
             </div>
         </div>
-  
+    <script>
+        function updateRaceLabel() {
+            var raceSelect = document.getElementById("raceSelect");
+            var selectedRace = raceSelect.options[raceSelect.selectedIndex].text;
+            document.getElementById("raceLabel").innerText = "Kết quả vòng đua tại " + selectedRace;
+            localStorage.setItem('selectedRace', selectedRace);
+            document.getElementById('raceForm').submit();
+        }
+        
+        window.onload = function() {
+            var storedRace = localStorage.getItem('selectedRace');
+            if (storedRace) {
+                document.getElementById("raceLabel").innerText = "Kết quả vòng đua tại " + storedRace;
+            }
+        }
+    </script>
 </body>
