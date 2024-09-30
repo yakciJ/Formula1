@@ -1,0 +1,31 @@
+CREATE TABLE F1_Schedule (
+    race_id INT PRIMARY KEY AUTO_INCREMENT,
+    race_name VARCHAR(255) NOT NULL,
+    circuit_name VARCHAR(255) NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    race_date DATE NOT NULL,
+    laps INT NOT NULL,
+    circuit_length_km FLOAT NOT NULL,
+    race_time TIME NOT NULL
+);
+
+INSERT INTO F1_Schedule (race_name, circuit_name, location, race_date, laps, circuit_length_km, race_time)
+VALUES
+    ('Bahrain Grand Prix', 'Bahrain International Circuit', 'Sakhir, Bahrain', '2024-03-02', 57, 5.412, '15:00:00'),
+    ('Saudi Arabian Grand Prix', 'Jeddah Corniche Circuit', 'Jeddah, Saudi Arabia', '2024-03-10', 50, 6.174, '17:00:00'),
+    ('Australian Grand Prix', 'Albert Park Circuit', 'Melbourne, Australia', '2024-03-24', 58, 5.278, '16:00:00'),
+    ('Japanese Grand Prix', 'Suzuka International Racing Course', 'Suzuka, Japan', '2024-04-07', 53, 5.807, '14:00:00'),
+    ('Chinese Grand Prix', 'Shanghai International Circuit', 'Shanghai, China', '2024-04-21', 56, 5.451, '15:00:00'),
+    ('Miami Grand Prix', 'Miami International Autodrome', 'Miami, USA', '2024-05-05', 57, 5.412, '15:30:00'),
+    ('Emilia Romagna Grand Prix', 'Autodromo Enzo e Dino Ferrari', 'Imola, Italy', '2024-05-19', 63, 4.909, '14:00:00'),
+    ('Monaco Grand Prix', 'Circuit de Monaco', 'Monaco', '2024-05-26', 78, 3.337, '15:00:00'),
+    ('Canadian Grand Prix', 'Circuit Gilles Villeneuve', 'Montreal, Canada', '2024-06-09', 70, 4.361, '14:00:00'),
+    ('Spanish Grand Prix', 'Circuit de Barcelona-Catalunya', 'Barcelona, Spain', '2024-06-23', 66, 4.675, '15:00:00'),
+    ('Austrian Grand Prix', 'Red Bull Ring', 'Spielberg, Austria', '2024-06-30', 71, 4.318, '15:00:00'),
+    ('British Grand Prix', 'Silverstone Circuit', 'Silverstone, UK', '2024-07-07', 52, 5.891, '15:00:00'),
+    ('Hungarian Grand Prix', 'Hungaroring', 'Budapest, Hungary', '2024-07-21', 70, 4.381, '15:00:00'),
+    ('Belgian Grand Prix', 'Circuit de Spa-Francorchamps', 'Spa, Belgium', '2024-07-28', 44, 7.004, '15:00:00'),
+    ('Dutch Grand Prix', 'Circuit Zandvoort', 'Zandvoort, Netherlands', '2024-08-25', 72, 4.259, '15:00:00'),
+    ('Italian Grand Prix', 'Autodromo Nazionale Monza', 'Monza, Italy', '2024-09-01', 53, 5.793, '15:00:00'),
+    ('Azerbaijan Grand Prix', 'Baku City Circuit', 'Baku, Azerbaijan', '2024-09-15', 51, 6.003, '15:00:00'),
+    ('Singapore Grand Prix', 'Marina Bay Street Circuit', 'Marina Bay, Singapore', '2024-09-22', 61, 5.063, '20:00:00');
