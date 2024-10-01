@@ -124,3 +124,24 @@ SET IMG_URL = CASE ID
     WHEN 15 THEN '/Image/Racer/serper01.avif'
     END
 WHERE ID BETWEEN 1 AND 20;
+
+UPDATE `F1`.`DRIVER` SET `TEAM` = 'RedBull2' WHERE (`ID` = '19');
+
+use f1;
+ALTER TABLE TEAM
+ADD COLUMN IMG_URL_TEAM VARCHAR(255);
+
+UPDATE TEAM
+SET IMG_URL_TEAM = CASE id
+    WHEN 1 THEN '/Image/LogoDetail_Team/alpine.jpeg'
+	WHEN 2 THEN '/Image/LogoDetail_Team/aston martin 2024.png'
+    WHEN 3 THEN '/Image/LogoDetail_Team/ferrari.png'
+    WHEN 4 THEN '/Image/LogoDetail_Team/haas.jpeg'
+    WHEN 5 THEN '/Image/LogoDetail_Team/kick sauber.png'
+    WHEN 6 THEN '/Image/LogoDetail_Team/mclaren.png'
+    WHEN 7 THEN '/Image/LogoDetail_Team/mercedes.jpeg'
+    WHEN 8 THEN '/Image/LogoDetail_Team/rb.png'
+    WHEN 9 THEN '/Image/LogoDetail_Team/red bull.jpeg'
+    WHEN 10 THEN '/Image/LogoDetail_Team/williams.jpeg'
+    END
+WHERE ID BETWEEN 1 AND 10;
