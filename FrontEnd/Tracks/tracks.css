@@ -143,6 +143,7 @@ body{
 #main-content{
     margin-top: 10vw;
     margin-bottom: 3vw;
+    min-height: 63vh;
 }
 
 .row{
