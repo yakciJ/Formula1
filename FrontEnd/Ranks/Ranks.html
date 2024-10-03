@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Ranks.css"> <!-- Đường dẫn tới CSS file -->
+    <title>Data Fetcher</title>
+</head>
+<body>
+    <h1>Tìm kiếm kết quả cuộc đua F1 các năm</h1>
+    
+    <label for="year">Kết quả năm:</label>
+    <select id="year">
+        <option value=""></option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+    </select>
+    <button onclick="fetchData()">Tìm kiếm</button>
+
+    <div id="result"></div>
+
+    <script>
+        // Hàm để lấy dữ liệu từ backend
+        function fetchData() {
+            const year = document.getElementById('year').value;
+
+            // Kiểm tra người dùng đã chọn năm chưa
+            if (!year) {
+                alert('Vui lòng chọn năm cần tìm kiếm.');
+                return;
+            }
+
+            // Gửi Post yêu cầu tới backend
+            fetch('http://localhost:3000/api/get-data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ year: year }) // Gửi đi năm cần tìm
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => displayData(data)) // Hiển thị dữ liệu
+            .catch(error => console.error('Error:', error));
+        }
+
+        // Hiển thị dữ liệu qua table
+        function displayData(data) {
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = ''; // Loại bỏ kết quả trước đó
+
+            if (data.length > 0) {
+                let table = '<table><tr>';
+
+                // Tùy chỉnh tên cột
+                const customHeaders = {
+                    POSITION: 'Xếp hạng',
+                    DRIVER: 'Tên tay đua',
+                    CONSTRUCTOR: 'Tên đội đua',
+                    POINTS: 'Điểm',
+                    WINS: 'Số lần về nhất'
+                };
+
+                // Tạo hàng đầu tiên của bảng gồm tên các cột
+                Object.keys(data[0]).forEach(key => {
+                    if (key !== 'YEAR') { // Bỏ qua cột năm
+                        table += `<th>${customHeaders[key] || key}</th>`;
+                    }
+                });
+                table += '</tr>';
+
+                // Tạo các dòng của bảng
+                data.forEach(row => {
+                    table += '<tr>';
+                    Object.keys(row).forEach(key => {
+                        if (key !== 'YEAR') { // Bỏ qua cột năm
+                            table += `<td>${row[key]}</td>`;
+                        }
+                    });
+                    table += '</tr>';
+                });
+
+                table += '</table>';
+                resultDiv.innerHTML = table; // Chèn bảng vào thành phần "result" 
+            } else {
+                resultDiv.innerHTML = '<p>Không có dữ liệu về năm cần tìm kiếm.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
