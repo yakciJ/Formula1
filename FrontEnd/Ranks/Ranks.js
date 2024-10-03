@@ -1,3 +1,5 @@
+// npm install cors
+
 console.log("testing");
 
 const express = require('express');
