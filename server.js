@@ -1,6 +1,6 @@
 var cluster = require('cluster');
 // Make server reset every time it crash.
-if(cluster.isMaster){
+if (cluster.isMaster) {
 
     // Count the machine's CPUs
     var crashed = 0;
@@ -18,10 +18,9 @@ if(cluster.isMaster){
         console.log('Server crashed times %d :(. Reset server!', crashed);
         cluster.fork();
     });
-} 
+}
 // Bat dau code trong else tu day. Ke phan tren di.
-else
-{
+else {
     const express = require('express');
     const path = require('path');
     const app = express();
@@ -36,12 +35,13 @@ else
     app.get('/', (req, res) => {
         res.sendFile(path.join(__dirname, 'FrontEnd', 'Home', 'home.html'));
     });
-    
-    
+
+
+
     // Start the server
-    
-    
-    
+
+
+
     app.listen(port, () => {
         console.log(`Server is running on http://localhost:${port}`);
     });
