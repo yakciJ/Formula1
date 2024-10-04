@@ -48,5 +48,6 @@ else {
     require(path.join(__dirname, '/BackEnd/tracks.js'))(app);
     require(path.join(__dirname, '/BackEnd/raceresults.js'))(app);
     require(path.join(__dirname, '/BackEnd/Driver/apidriver.js'))(app);
+    require(path.join(__dirname, '/BackEnd/Team/apiteam.js'))(app);
 }
 
