@@ -145,3 +145,24 @@ SET IMG_URL_TEAM = CASE id
     WHEN 10 THEN '/Image/LogoDetail_Team/williams.jpeg'
     END
 WHERE ID BETWEEN 1 AND 10;
+
+
+use F1;
+
+ALTER TABLE TEAM
+ADD COLUMN NAME VARCHAR(255);
+
+UPDATE TEAM
+SET NAME = CASE id
+    WHEN 1 THEN 'Alpine'
+	WHEN 2 THEN 'Haas'
+    WHEN 3 THEN 'Aston Martin'
+    WHEN 4 THEN 'Kick Sauber'
+    WHEN 5 THEN 'Ferrari'
+    WHEN 6 THEN 'RedBull'
+    WHEN 7 THEN 'Mercedes'
+    WHEN 8 THEN 'Williams'
+    WHEN 9 THEN 'McLaren'
+    WHEN 10 THEN 'Red Bull Racing'
+    END
+WHERE ID BETWEEN 1 AND 10;

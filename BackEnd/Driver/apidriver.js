@@ -1,4 +1,4 @@
-const db = require('../dbcon');
+
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -9,11 +9,10 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname + '../../../FrontEnd', 'Driver', 'driver.html'));
   });
 
-  app.get('/team', (req, res) => {
-    res.sendFile(path.join(__dirname + '../../../FrontEnd', 'Team', 'team.html'));
-  });
+  
 
   app.get('/driver/data', (req, res) => {
+    const db = require('../dbcon');
     const driverName = req.query.name;
     db.query("SELECT * FROM DRIVER WHERE NAME = ?",[driverName], (err, results) => {
       if (err) {
@@ -24,4 +23,6 @@ module.exports = function (app) {
     });
   });
 }
+
+
 
