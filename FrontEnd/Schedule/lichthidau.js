@@ -38,7 +38,7 @@ const raceData = [
         laps: 51,
         circuit_length_km: 6.003,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/Baku_Circuit.avif'
+        image: '/Image/Track/detail/Baku_Circuit.avif'
     },
     {
         race_name: 'Japanese Grand Prix',
@@ -48,7 +48,7 @@ const raceData = [
         laps: 53,
         circuit_length_km: 5.807,
         race_time: '14:00:00',
-        image: 'Image/Track/detail/Japan_Circuit.avif'
+        image: '/Image/Track/detail/Japan_Circuit.avif'
     },
     {
         race_name: 'Chinese Grand Prix',
@@ -58,7 +58,7 @@ const raceData = [
         laps: 56,
         circuit_length_km: 5.451,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/China_Circuit.png'
+        image: '/Image/Track/detail/China_Circuit.png'
     },
     {
         race_name: 'Miami Grand Prix',
@@ -68,7 +68,7 @@ const raceData = [
         laps: 57,
         circuit_length_km: 5.412,
         race_time: '15:30:00',
-        image: 'Image/Track/detail/Miami_Circuit.avif'
+        image: '/Image/Track/detail/Miami_Circuit.avif'
     },
     {
         race_name: 'Emilia Romagna Grand Prix',
@@ -78,7 +78,7 @@ const raceData = [
         laps: 63,
         circuit_length_km: 4.909,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/Emilia_Romagna_Circuit.avif'
+        image: '/Image/Track/detail/Emilia_Romagna_Circuit.avif'
     },
     {
         race_name: 'Monaco Grand Prix',
@@ -88,7 +88,7 @@ const raceData = [
         laps: 78,
         circuit_length_km: 3.337,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/Monoco_Circuit.avif'
+        image: '/Image/Track/detail/Monoco_Circuit.avif'
     },
     {
         race_name: 'Spanish Grand Prix',
@@ -98,7 +98,7 @@ const raceData = [
         laps: 66,
         circuit_length_km: 4.675,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/Spain_Circuit.avif'
+        image: '/Image/Track/detail/Spain_Circuit.avif'
     },
     {
         race_name: 'Canadian Grand Prix',
@@ -108,7 +108,7 @@ const raceData = [
         laps: 70,
         circuit_length_km: 4.361,
         race_time: '14:00:00',
-        image: 'Image/Track/detail/Canada_Circuit.avif'
+        image: '/Image/Track/detail/Canada_Circuit.avif'
     },
     {
         race_name: 'Austrian Grand Prix',
@@ -118,7 +118,7 @@ const raceData = [
         laps: 71,
         circuit_length_km: 4.318,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/Austria_Circuit.avif'
+        image: '/Image/Track/detail/Austria_Circuit.avif'
     },
     {
         race_name: 'British Grand Prix',
@@ -128,7 +128,7 @@ const raceData = [
         laps: 52,
         circuit_length_km: 5.891,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/Great_Britain_Circuit.avif'
+        image: '/Image/Track/detail/Great_Britain_Circuit.avif'
     },
     {
         race_name: 'Hungarian Grand Prix',
@@ -138,7 +138,7 @@ const raceData = [
         laps: 70,
         circuit_length_km: 4.381,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/Hungary_Circuit.avif'
+        image: '/Image/Track/detail/Hungary_Circuit.avif'
     },
     {
         race_name: 'Belgian Grand Prix',
@@ -148,7 +148,7 @@ const raceData = [
         laps: 44,
         circuit_length_km: 7.004,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/Belgium_Circuit.png'
+        image: '/Image/Track/detail/Belgium_Circuit.png'
     },
     {
         race_name: 'Dutch Grand Prix',
@@ -158,7 +158,7 @@ const raceData = [
         laps: 72,
         circuit_length_km: 4.259,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/Netherlands_Circuit.avif'
+        image: '/Image/Track/detail/Netherlands_Circuit.avif'
     },
     {
         race_name: 'Italian Grand Prix',
@@ -168,7 +168,7 @@ const raceData = [
         laps: 53,
         circuit_length_km: 5.793,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/Italy_Circuit.avif'
+        image: '/Image/Track/detail/Italy_Circuit.avif'
     },
     {
         race_name: 'Singapore Grand Prix',
@@ -178,7 +178,7 @@ const raceData = [
         laps: 61,
         circuit_length_km: 5.063,
         race_time: '20:00:00',
-        image: 'Image/Track/detail/Singapore_Circuit.avif'
+        image: '/Image/Track/detail/Singapore_Circuit.avif'
     },
     {
         race_name: 'United States Grand Prix',
@@ -188,7 +188,7 @@ const raceData = [
         laps: 56,
         circuit_length_km: 5.513,
         race_time: '15:00:00',
-        image: 'Image/Track/detail/USA_Circuit.avif'
+        image: '/Image/Track/detail/USA_Circuit.avif'
     }
 ];
 
@@ -257,10 +257,7 @@ function createRaceCards() {
         // Append card to race list
         raceList.appendChild(card);
     });
-
 }
-
-
 // Initialize the page
 window.onload = () => {
     createRaceCards();
