@@ -1,3 +1,250 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}
+
+.header,
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+.header {
+    height: 150px;
+}
+
+body {
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.chucnang li {
+    font-size: 1.5vw;
+}
+
+.header {
+    z-index: 999;
+    height: 8vw;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.section1 {
+    background-color: #fff;
+    height: 3.5vw;
+    margin-top: 0;
+
+}
+
+.logotop {
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    list-style-type: none;
+    background-color: none;
+    height: 100%;
+    margin: 0;
+}
+
+/* nút Home */
+
+.back-home {
+    display: flex;
+    width: 5vw;
+    height: 50%;
+    justify-content: center;
+}
+
+.back-home:hover {
+    height: 55%;
+}
+
+/* 5 nút chức năng */
+
+.section2 {
+    position: relative;
+    background-color: red;
+    height: 4.5vw;
+    display: flex;
+    justify-content: center;
+}
+
+
+.chucnang {
+    list-style-type: none;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+
+}
+
+.li1 {
+    padding-left: 3vw;
+    margin-top: 20px;
+    height: 100%;
+    width: auto;
+}
+
+.thongtin {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.link-thongtin {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16;
+    text-transform: none;
+    font-weight: bold;
+}
+
+.sub-thongtin {
+    list-style-type: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 10px 0 10px 0;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    display: none;
+
+}
+
+.thongtin:hover {
+    background-color: black;
+}
+
+.sub-thongtin li {
+    margin: 10px;
+}
+
+.sub-thongtin li a {
+
+    color: #fff;
+    text-decoration: none;
+
+    text-transform: none;
+    font-weight: bold;
+}
+
+.thongtin:hover .sub-thongtin {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-thongtin li a:hover {
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+.truongdua {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
+.truongdua:hover {
+    background-color: black;
+}
+
+#main-content {
+    margin-top: 10vw;
+    margin-bottom: 3vw;
+    min-height: 63vh;
+}
+
+.row {
+    display: flex;
+    margin-top: 3vw;
+    margin-left: 10vw;
+    margin-bottom: 3vw;
+}
+
+.tracks {
+    text-decoration: none;
+    color: black;
+    font-size: 2vw;
+    margin-right: 4vw;
+    border: 0.5vw solid rgb(0, 0, 0);
+    border-radius: 2vw;
+    width: 16vw;
+}
+
+.tracks:hover {
+    border: 0.5vw solid red;
+}
+
+.tracks-basic {
+    height: 12vw;
+}
+
+.tracks-name {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5vw;
+}
+
+.back {
+    margin-left: 4.5vw;
+    font-size: 2vw;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+#main-content2 {
+    margin-top: 9vw;
+    margin-bottom: 3vw;
+}
+
+.content {
+    display: flex;
+    border: black solid 0.5vw;
+    width: 90vw;
+    height: 76vh;
+    margin-left: 4.5vw;
+    border-radius: 20px;
+}
+
+.detail-img {
+    width: 60vw;
+    height: 38vw;
+    margin-top: 1vw;
+}
+
+.track-datas {
+    margin: 1.6vw;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: rgb(100, 100, 100) solid 0.2vw;
+}
+
+.title {
+    font-size: 1.5vw;
+}
+
+.track-data {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
 /* General Styles */
 * {
     margin: 0;
@@ -16,17 +263,6 @@ a {
     color: inherit;
 }
 
-/* Header Styles */
-header {
-    background-color: #000;
-    color: #fff;
-    padding: 10px 20px;
-}
-
-header .logo h1 {
-    font-size: 24px;
-    font-weight: bold;
-}
 
 nav {
     margin-top: 10px;
@@ -55,7 +291,7 @@ nav ul li a:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin-top: 200px;
 }
 
 th,
@@ -67,4 +303,12 @@ td {
 th {
     background-color: #ff1801;
     color: white;
+}
+
+.logo-top {
+    margin-top: 0;
+}
+
+.header-logo {
+    margin-right: 150px;
 }

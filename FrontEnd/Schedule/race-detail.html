@@ -4,34 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Driver</title>
-    <link rel="stylesheet" href="/FrontEnd/Driver/driver.css">
+    <link rel="stylesheet" href="/FrontEnd/Schedule/race-detail.css">
+    <title>Race Schedule</title>
 </head>
 
 <body>
+    <!-- Header section -->
     <header class="header">
         <section class="section1">
             <ul class="logotop">
-                <li class="li1"><a href="https://www.fia.com" target="_blank"><img src="/Image/Logo/fialogo.png"
-                            alt="LogoFIA" class="li1"></a></li>
-                <li class="li1"><a href="https://www.formula1.com" target="_blank"><img src="/Image/Logo/formulaf1.png"
-                            alt="LogoF1" class="li1"></a></li>
+                <li class="li1 logo-top"><a href="https://www.fia.com" target="_blank"><img
+                            src="/Image/Logo/fialogo.png" alt="LogoFIA" class="li1 logo-top"></a></li>
+
+                <li class="li1 logo-top"><a href="https://www.formula1.com" target="_blank"><img
+                            src="/Image/Logo/formulaf1.png" alt="LogoF1" class="li1 logo-top"></a></li>
             </ul>
         </section>
         <section class="section2">
-            <a class="back-home" href="/FrontEnd/Home/home.html"><img src="/Image/Logo/f1logo2.png" alt="abc"
-                    class="li1"></a>
+            <a class="back-home" href="/"><img src="/Image/Logo/f1logo2.png" alt="F1 Logo" class="li1 header-logo"></a>
             <ul class="chucnang">
                 <li class="thongtin">
                     <a href="#" class="link-thongtin">Thông tin</a>
                     <ul class="sub-thongtin">
                         <li><a href="/driver">Tay đua</a></li>
                         <li><a href="/team">Đội đua</a></li>
+                        <li><a href="/schedule">Lich Thi Dau</a></li>
                     </ul>
                 </li>
-                <li class="truongdua"><a href="#" class="link-thongtin">Trường đua</a></li>
-                <li class="truongdua"><a href="#" class="link-thongtin">Lịch thi đấu</a></li>
-                <li class="truongdua"><a href="#" class="link-thongtin">Kết quả</a></li>
+                <li class="truongdua"><a href="/duong-dua" class="link-thongtin">Trường đua</a></li>
+                <li class="truongdua"><a href="/FrontEnd/Schedule/lichthidau.html" class="link-thongtin">Lịch thi
+                        đấu</a></li>
+                <li class="truongdua"><a href="" class="link-thongtin">Kết quả</a></li>
                 <li class="truongdua"><a href="#" class="link-thongtin">Xếp hạng</a></li>
             </ul>
         </section>
@@ -61,11 +64,8 @@
         </table>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Formula 1. All rights reserved.</p>
-    </footer>
 
-    <script src="race-details.js"></script>
+    <script src="race-detail.js"></script>
 </body>
 
 </html>

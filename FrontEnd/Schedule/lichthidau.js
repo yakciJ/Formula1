@@ -252,7 +252,7 @@ function createRaceCards() {
 
         // View Details link
         viewDetails.onclick = () => {
-            window.location.href = `race-details.html?race_name=${encodeURIComponent(race.race_name)}`;
+            window.location.href = `race-detail.html?race_name=${encodeURIComponent(race.race_name)}`;
         };
         // Append card to race list
         raceList.appendChild(card);
