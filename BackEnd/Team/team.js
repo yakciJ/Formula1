@@ -2,7 +2,7 @@ document.querySelectorAll('body main #sec-f1-team ul li').forEach(function (item
     item.addEventListener('click', function () {
         var name
         name = this.querySelector('ol li i').textContent;
-        fetch(`/team/data?name=${encodeURIComponent(name)}`)
+        fetch(`/team/data?name=${(name)}`)
             .then(response => response.json())
             .then(data => {
                 document.getElementById('full-team-name').innerText = data[0]?.FULLNAME;
