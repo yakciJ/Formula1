@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver</title>
+    <link rel="stylesheet" href="/FrontEnd/Driver/driver.css">
+</head>
+
+<body>
+    <header class="header">
+        <section class="section1">
+            <ul class="logotop">
+                <li class="li1"><a href="https://www.fia.com" target="_blank"><img src="/Image/Logo/fialogo.png"
+                            alt="LogoFIA" class="li1"></a></li>
+                <li class="li1"><a href="https://www.formula1.com" target="_blank"><img src="/Image/Logo/formulaf1.png"
+                            alt="LogoF1" class="li1"></a></li>
+            </ul>
+        </section>
+        <section class="section2">
+            <a class="back-home" href="/FrontEnd/Home/home.html"><img src="/Image/Logo/f1logo2.png" alt="abc"
+                    class="li1"></a>
+            <ul class="chucnang">
+                <li class="thongtin">
+                    <a href="#" class="link-thongtin">Thông tin</a>
+                    <ul class="sub-thongtin">
+                        <li><a href="/driver">Tay đua</a></li>
+                        <li><a href="/team">Đội đua</a></li>
+                    </ul>
+                </li>
+                <li class="truongdua"><a href="#" class="link-thongtin">Trường đua</a></li>
+                <li class="truongdua"><a href="#" class="link-thongtin">Lịch thi đấu</a></li>
+                <li class="truongdua"><a href="#" class="link-thongtin">Kết quả</a></li>
+                <li class="truongdua"><a href="#" class="link-thongtin">Xếp hạng</a></li>
+            </ul>
+        </section>
+    </header>
+    <main>
+        <section class="race-details" id="race-details">
+        </section>
+    </main>
+    <main>
+        <div>
+            <h2>Race Details</h2>
+        </div>
+        <button id="back-button">Back to Schedule</button>
+        <table id="details-table">
+            <thead>
+                <tr>
+                    <th>Race Name</th>
+                    <th>Circuit Name</th>
+                    <th>Location</th>
+                    <th>Date</th>
+                    <th>Laps</th>
+                    <th>Circuit Length (km)</th>
+                    <th>Race Time</th>
+                </tr>
+            </thead>
+            <tbody id="details-body"></tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Formula 1. All rights reserved.</p>
+    </footer>
+
+    <script src="race-details.js"></script>
+</body>
+
+</html>

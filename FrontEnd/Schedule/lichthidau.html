@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/FrontEnd/Home/home.css">
-
-    <title>Home Page</title>
+    <link rel="stylesheet" href="/FrontEnd/Schedule/lichthidau.css">
+    <title>Race Schedule</title>
 </head>
 
 <body>
-    <div id="schedule-list"></div>
+    <!-- Header section -->
     <header class="header">
         <section class="section1">
             <ul class="logotop">
@@ -21,37 +20,36 @@
             </ul>
         </section>
         <section class="section2">
-            <a class="back-home" href="/FrontEnd/Home/home.html"><img src="/Image/Logo/f1logo2.png" alt="abc"
-                    class="li1"></a>
+            <a class="back-home" href="/"><img src="/Image/Logo/f1logo2.png" alt="F1 Logo" class="li1"></a>
             <ul class="chucnang">
                 <li class="thongtin">
                     <a href="#" class="link-thongtin">Thông tin</a>
                     <ul class="sub-thongtin">
-                        <li><a href="/FrontEnd/Driver/driver.html">Tay đua</a></li>
-                        <li><a href="/FrontEnd/Team/team.html">Đội đua</a></li>
-                        <li><a href="/FrontEnd/Schedule/lichthidau.html">Lịch Thi Đấu</a></li>
+                        <li><a href="/driver">Tay đua</a></li>
+                        <li><a href="/team">Đội đua</a></li>
+                        <li><a href="/schedule">Lich Thi Dau</a></li>
                     </ul>
                 </li>
                 <li class="truongdua"><a href="/duong-dua" class="link-thongtin">Trường đua</a></li>
-                <li class="truongdua"><a href="/api/schedule" class="link-thongtin">Lịch thi
+                <li class="truongdua"><a href="/FrontEnd/Schedule/lichthidau.html" class="link-thongtin">Lịch thi
                         đấu</a></li>
-                <li class="truongdua"><a href="#" class="link-thongtin">Kết quả</a></li>
+                <li class="truongdua"><a href="" class="link-thongtin">Kết quả</a></li>
                 <li class="truongdua"><a href="#" class="link-thongtin">Xếp hạng</a></li>
             </ul>
         </section>
     </header>
-    <main>
-        <section class="schedule">
-            <h2>Race Calendar</h2>
-            <div class="race-list" id="race-list">
 
-            </div>
+    <!-- Main content for race schedule -->
+    <main class="main">
+        <section id="race-list" class="race-list">
+            <!-- Race cards will be dynamically generated here -->
         </section>
     </main>
+
+    <!-- Footer section -->
     <footer></footer>
 
-
-    <script src="/FrontEnd/Schedule/lichthidau.js"></script>
+    <script src="/FrontEnd/Schedule/lichthidau.js"></script> <!-- JS for schedule functionality -->
 </body>
 
 </html>

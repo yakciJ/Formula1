@@ -7,7 +7,6 @@ const raceData = [
         laps: 57,
         circuit_length_km: 5.41,
         race_time: '15:00:00',
-        image: '/Image/Track/detail/Bahrain_Circuit.avif'
     },
     {
         race_name: 'Saudi Arabian Grand Prix',
@@ -192,82 +191,34 @@ const raceData = [
     }
 ];
 
-// Function to format date
-function formatDate(dateStr) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    const dateObj = new Date(dateStr);
-    return dateObj.toLocaleDateString(undefined, options);
+// Function to populate race details in the table
+function populateRaceDetails() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const raceName = urlParams.get('race_name');
+    const race = raceData.find(r => r.race_name === raceName);
+    const detailsBody = document.getElementById('details-body');
+
+    if (race) {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${race.race_name}</td>
+            <td>${race.circuit_name}</td>
+            <td>${race.location}</td>
+            <td>${new Date(race.date).toLocaleDateString()}</td>
+            <td>${race.laps}</td>
+            <td>${race.circuit_length_km}</td>
+            <td>${race.race_time}</td>
+        `;
+        detailsBody.appendChild(row);
+    }
 }
 
-
-function createRaceCards() {
-    const raceList = document.getElementById('race-list');
-
-    raceData.forEach((race) => {
-        // Create card element
-        const card = document.createElement('div');
-        card.classList.add('race-card');
-
-        // Add image
-        const img = document.createElement('img');
-        img.src = race.image;
-        img.alt = race.race_name;
-        card.appendChild(img);
-
-        // Create content container
-        const content = document.createElement('div');
-        content.classList.add('race-content');
-
-        // Race name
-        const raceName = document.createElement('h3');
-        raceName.textContent = race.race_name;
-        content.appendChild(raceName);
-
-        // Race date
-        const raceDate = document.createElement('p');
-        raceDate.classList.add('race-date');
-        raceDate.textContent = formatDate(race.date);
-        content.appendChild(raceDate);
-
-        // Location
-        const location = document.createElement('p');
-        location.classList.add('race-location');
-        location.textContent = race.location;
-        content.appendChild(location);
-
-        // Append content to card
-        card.appendChild(content);
-
-        // View Details link
-        const viewDetails = document.createElement('a');
-        viewDetails.href = '#';
-        viewDetails.textContent = 'View Details';
-        viewDetails.classList.add('view-details');
-        card.appendChild(viewDetails);
-        // Add event listener to "View Details" link
-        viewDetails.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.location.href = `detail.html?raceIndex=${raceData.indexOf(race)}`;
-        });
-
-        // View Details link
-        viewDetails.onclick = () => {
-            window.location.href = `race-details.html?race_name=${encodeURIComponent(race.race_name)}`;
-        };
-        // Append card to race list
-        raceList.appendChild(card);
-    });
-
-}
-
+// Back button functionality
+document.getElementById('back-button').onclick = function () {
+    window.history.back();
+};
 
 // Initialize the page
 window.onload = () => {
-    createRaceCards();
+    populateRaceDetails();
 };
-
-
-
-
-
-
