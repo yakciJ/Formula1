@@ -188,6 +188,56 @@ const raceData = [
         circuit_length_km: 5.513,
         race_time: '15:00:00',
         image: 'Image/Track/detail/USA_Circuit.avif'
+    },
+    {
+        race_name: 'Mexico City Grand Prix',
+        circuit_name: 'Autódromo Hermanos Rodríguez',
+        location: 'Mexico City, Mexico',
+        date: '2024-10-27',
+        laps: 71,
+        circuit_length_km: 4.304,
+        race_time: '14:00:00',
+        image: '/Image/Track/detail/Mexico_Circuit.avif'
+    },
+    {
+        race_name: 'Brazilian Grand Prix',
+        circuit_name: 'Interlagos Circuit',
+        location: 'São Paulo, Brazil',
+        date: '2024-11-03',
+        laps: 71,
+        circuit_length_km: 4.309,
+        race_time: '14:00:00',
+        image: '/Image/Track/detail/Brazil_Circuit.png'
+    },
+    {
+        race_name: 'Las Vegas Grand Prix',
+        circuit_name: 'Las Vegas Street Circuit',
+        location: 'Las Vegas, USA',
+        date: '2024-11-23',
+        laps: 50,
+        circuit_length_km: 6.12,
+        race_time: '22:00:00',
+        image: '/Image/Track/detail/Las_Vegas_Circuit.avif'
+    },
+    {
+        race_name: 'Qatar Grand Prix',
+        circuit_name: 'Lusail International Circuit',
+        location: 'Lusail, Qatar',
+        date: '2024-10-06',
+        laps: 57,
+        circuit_length_km: 5.380,
+        race_time: '18:00:00',
+        image: '/Image/Track/detail/Qatar_Circuit.avif'
+    },
+    {
+        race_name: 'Abu Dhabi Grand Prix',
+        circuit_name: 'Yas Marina Circuit',
+        location: 'Abu Dhabi, UAE',
+        date: '2024-12-01',
+        laps: 58,
+        circuit_length_km: 5.554,
+        race_time: '17:00:00',
+        image: '/Image/Track/detail/Abu_Dhabi_Circuit.avif'
     }
 ];
 
