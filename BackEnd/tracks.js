@@ -19,7 +19,6 @@ module.exports = function (app) {
     })
     // render track.ejs
     app.get('/duong-dua/:id', (req, res) => {
-        console.log(req.params.id);
         const con = require('./dbcon');
         con.query(`Select * from tracks Where ID = '${req.params.id}'`, function(err, result, fields){
             if(err){
