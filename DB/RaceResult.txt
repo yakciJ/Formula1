@@ -33,10 +33,7 @@ CREATE TABLE RaceResult(
     CAR varchar(50),
     LAPS int,
     RETIRED varchar(50),
-    PTS int,
-    SHEDULE varchar(50),
-    COUNTRY varchar(100),
-    FLAG varchar(255)
+    PTS int
 );
 INSERT INTO `raceresult`(`RACE`, `POS`, `NO`, `NAME`, `CAR`, `LAPS`, `RETIRED`, `PTS`) 
 VALUES
