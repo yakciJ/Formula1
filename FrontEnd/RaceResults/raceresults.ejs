@@ -62,11 +62,17 @@
                     <option value="18">SINGAPORE</option>
                 </select>
             </form>
-            <% if (raceInfo) { %>
-                <h2>Trường đua: <%= raceInfo.COUNTRY %></h2>
-                <p>Lịch trình: <%= raceInfo.SCHEDULE %></p>
-                <img src="<%= raceInfo.FLAG %>" alt="Flag of <%= raceInfo.country %>" width="50" height="30">
-            <% } %>
+                <div class="race-header">
+                    <% if (raceInfo) { %>
+                        <h2>Trường đua: <%= raceInfo.COUNTRY %></h2>
+                        <p>Lịch trình: <%= raceInfo.SCHEDULE %></p>
+                        <!-- Hiển thị cờ lớn hơn -->
+                        <img src="<%= raceInfo.FLAG %>" 
+                             alt="Flag of <%= raceInfo.country %>" 
+                             width="220" height="130" 
+                             style="float: right;margin-top: -200px; margin-right: 130px;border: 0.1px solid black;">
+                    <% } %>
+                </div>
             <% if (typeof results !== 'undefined' && results.length > 0) { %>
                 <table border="1">
                     <thead>
