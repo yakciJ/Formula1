@@ -93,7 +93,7 @@ body {
     align-items: center;
     background-color: black;
     display: none;
-
+    z-index: 1;
 }
 
 .thongtin:hover {
@@ -149,10 +149,101 @@ body {
     height: 630px;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 .sec-home img {
     height: 100%;
     width: 100%;
-    padding: 0;
+    padding-top: 0px;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 0, 0);
+    font-size: 5em;
+    text-align: center;
+    z-index: 1;
+    text-shadow: 2px 0 #ffffff, -2px 0 #ffffff, 0 2px #ffffff, 0 -2px #ffffff,
+    1px 1px #ffffff, -1px -1px #ffffff, 1px -1px #ffffff, -1px 1px #ffffff;
+}
+
+.ranking{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    height: 100%;
+    background-color: #fff;
+}
+
+.top2, .top1, .top3 {
+    border: black 5px solid;
+    margin: 10px;
+
+}
+
+.top2 img, .top3 img {
+    max-width: 17vw;
+    max-height: 17vw;
+}
+
+.top1 img {
+    max-width: 20vw;
+    max-height: 20vw;
+}
+
+.name {
+    text-align: center;
+    font-size: 2vw;
+}
+
+
+
+
+
+#footer{
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+#app-download{
+    margin-top: 1vw;
+    display: flex;
+}
+
+#app-download a img{
+    width: 10vw;
+    height: 3vw;
+}
+
+#app-download p{
+    margin: 0;
+    margin-left: 5vw;
+    width: 10vw;
+    font-size: 1.2vw;
+}
+
+#social-link{
+    display: flex;
+    margin-left: 50%;
+    margin-top: 1vw;
+}
+
+#social-link a img{
+    margin: 0.3vw;
+    width: 2vw;
+    height: 2vw;
+    border:1px solid rgb(255, 255, 255);
+    padding: 1px;
+}
+
+#copy-right{
+    position: absolute;
+    right: 0;
+    margin-right: 3vw;
+    font-size: 1vw;
 }
