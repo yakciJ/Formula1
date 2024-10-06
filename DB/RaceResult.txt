@@ -1,3 +1,30 @@
+CREATE TABLE Raceinfo(
+    ID INT PRIMARY KEY,
+    SCHEDULE VARCHAR(50),
+    COUNTRY VARCHAR(100),
+    FLAG VARCHAR(255)
+);
+INSERT INTO `Raceinfo`(`ID`,`SCHEDULE`,`COUNTRY`,`FLAG`) 
+VALUES
+(1,'29 Feb - 02 Mar 2024','Bahrain International Circuit, Sakhir','/Image/Countryflag/Flag_of_Bahrain.svg.png'),
+(2,'07 - 09 Mar 2024','Jeddah Corniche Circuit, Jeddah','/Image/Countryflag/Flag_of_Saudi_Arabia.svg.png'),
+(3,'22 - 24 Mar 2024','Albert Park Grand Prix Circuit, Melbourne','/Image/Countryflag/Flag_of_Australia.svg.png'),
+(4,'05 - 07 Apr 2024','Suzuka Circuit, Suzuka','/Image/Countryflag/Flag_of_Japan.png'),
+(5,'19 - 21 Apr 2024','Shanghai International Circuit, Shanghai','/Image/Countryflag/Flag_of_China.svg.png'),
+(6,'03 - 05 May 2024','Miami International Autodrome, Miami','/Image/Countryflag/Flag_of_Miami.png'),
+(7,'17 - 19 May 2024','Autodromo Internazionale Enzo e Dino Ferrari, Imola','/Image/Countryflag/Flag_of_Emilia-Romagna.svg.png'),
+(8,'24 - 26 May 2024','Circuit de Monaco, Monaco,'/Image/Countryflag/Flag_of_Monaco.png'),
+(9,'07 - 09 Jun 2024','Circuit Gilles-Villeneuve, Montréal','/Image/Countryflag/Flag_of_Canada.svg.png'),
+(10,'21 - 23 Jun 2024','Circuit de Barcelona-Catalunya, Barcelona','/Image/Countryflag/Flag_of_Spain.svg.png'),
+(11,'28 - 30 Jun 2024','Red Bull Ring, Spielberg','/Image/Countryflag/Flag_of_Austria.svg.png'),
+(12,'05 - 07 Jul 2024','Silverstone Circuit, Silverstone','/Image/Countryflag/Flag_of_UK.png'),
+(13,'19 - 21 Jul 2024','Hungaroring, Budapest','/Image/Countryflag/Flag_of Hungary.png'),
+(14,'26 - 28 Jul 2024','Circuit de Spa-Francorchamps, Spa-Francorchamps','/Image/Countryflag/Flag_of_Belgium.svg.png'),
+(15,'23 - 25 Aug 2024','Circuit Zandvoort, Zandvoort','/Image/Countryflag/Flag_of_Netherland.png'),
+(16,'30 Aug - 01 Sep 2024','Autodromo Nazionale Monza, Monza','/Image/Countryflag/Flag_of_italy.png'),
+(17,'13 - 15 Sep 2024','Baku City Circuit, Baku','/Image/Countryflag/Flag_of_azerbaijan.png'),
+(18,'20 - 22 Sep 2024','Marina Bay Street Circuit, Marina Bay','/Image/Countryflag/Flag_of_Singapore.svg.png');
+
 CREATE TABLE RaceResult(
     RACE int,
     POS varchar(50),
