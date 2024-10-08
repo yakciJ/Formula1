@@ -4,29 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/FrontEnd/Ranks/Ranks.css"> <!-- Đường dẫn tới CSS file -->
-    <title>Data Fetcher</title>
+    <title>Hiển thị dữ liệu xếp hạng mùa mới</title>
 </head>
 <body>
-    <h1>Tìm kiếm kết quả cuộc đua F1 các năm</h1>
-    
-    <label for="year">Kết quả năm:</label>
-    <select id="year">
-        <option value=""></option>
-        <option value="2014">2014</option>
-        <option value="2015">2015</option>
-        <option value="2016">2016</option>
-        <option value="2017">2017</option>
-        <option value="2018">2018</option>
-        <option value="2019">2019</option>
-        <option value="2020">2020</option>
-        <option value="2021">2021</option>
-        <option value="2022">2022</option>
-        <option value="2023">2023</option>
-        <option value="2024">2024</option>
-    </select>
-    <button onclick="fetchData()">Tìm kiếm</button>
+    <header class="header">
+        <section class="section1">
+            <ul class="logotop">
+                <li class="li1 logo-top"><a href="https://www.fia.com" target="_blank"><img
+                            src="/Image/Logo/fialogo.png" alt="LogoFIA" class="li1 logo-top"></a></li>
 
-    <div id="result"></div>
+                <li class="li1 logo-top"><a href="https://www.formula1.com" target="_blank"><img
+                            src="/Image/Logo/formulaf1.png" alt="LogoF1" class="li1 logo-top"></a></li>
+            </ul>
+        </section>
+        <section class="section2">
+            <a class="back-home" href="/"><img src="/Image/Logo/f1logo2.png" alt="F1 Logo" class="li1 header-logo"></a>
+            <ul class="chucnang">
+                <li class="thongtin">
+                    <a href="#" class="link-thongtin">Thông tin</a>
+                    <ul class="sub-thongtin">
+                        <li><a href="/driver">Tay đua</a></li>
+                        <li><a href="/team">Đội đua</a></li>
+                        <li><a href="/schedule">Lich Thi Dau</a></li>
+                    </ul>
+                </li>
+                <li class="truongdua"><a href="/duong-dua" class="link-thongtin">Trường đua</a></li>
+                <li class="truongdua"><a href="/FrontEnd/Schedule/lichthidau.html" class="link-thongtin">Lịch thi
+                        đấu</a></li>
+                <li class="truongdua"><a href="/ket-qua" class="link-thongtin">Kết quả</a></li>
+                <li class="truongdua"><a href="#" class="link-thongtin">Xếp hạng</a></li>
+            </ul>
+        </section>
+    </header>
+
+    <div id="main-content">
+        <h1>Tìm kiếm kết quả cuộc đua F1 các năm</h1>
+        
+        <label for="year">Kết quả năm:</label>
+        <select id="year">
+            <option value=""></option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+            <option value="2017">2017</option>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+            <option value="2012">2012</option>
+            <option value="2011">2011</option>
+            <option value="2010">2010</option>
+            <option value="2009">2009</option>
+            <option value="2008">2008</option>
+            <option value="2007">2007</option>
+            <option value="2006">2006</option>
+            <option value="2005">2005</option>
+            <option value="2004">2004</option>
+            <option value="2003">2003</option>
+            <option value="2002">2002</option>
+            <option value="2001">2001</option>
+            <option value="2000">2000</option>
+        </select>
+        <button onclick="fetchData()">Tìm kiếm</button>
+
+        <div id="result"></div>
+    </div>
 
     <script>
         // Hàm để lấy dữ liệu từ backend
@@ -40,7 +86,7 @@
             }
 
             // Gửi Post yêu cầu tới backend
-            fetch('http://localhost:3001/api/get-data', {
+            fetch('http://localhost:6969/api/get-data', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
