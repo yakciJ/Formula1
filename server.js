@@ -25,7 +25,13 @@ else {
     const path = require('path');
     const app = express();
     const port = 6969;
+    
+    const cors = require('cors');
+    const bodyParser = require('body-parser');
 
+    // Cho phép FE và BE chạy cùng nhau dù khác port
+    app.use(cors());
+    app.use(bodyParser.json()); // Phân tích dữ liệu JSON trong yêu cầu
 
     // Serve static files from the directories
     app.use('/FrontEnd', express.static(path.join(__dirname, 'FrontEnd')));
@@ -41,6 +47,9 @@ else {
 
     // Start the server
 
+    // Gọi file Ranks.js
+    const ranksRoutes = require(path.join(__dirname, '/FrontEnd/Ranks/Ranks.js'));
+    app.use('/api', ranksRoutes); // Đặt prefix cho các route từ Ranks.js
 
 
     app.listen(port, () => {
