@@ -16,6 +16,10 @@ document.querySelectorAll('body main #sec-f1-team ul li').forEach(function (item
                 document.getElementById('highest-finish').innerText = data[0]?.Highest_Race_Finish;
                 document.getElementById('pole-positions').innerText = data[0]?.Pole_Positions;
                 document.getElementById('fastest-laps').innerText = data[0]?.Fastest_Laps;
+                document.getElementById('img_driver_1').src = data[0]?.IMG_URL;
+                document.getElementById('name_driver_1').innerText = data[0]?.NAME;
+                document.getElementById('img_driver_2').src = data[1]?.IMG_URL;
+                document.getElementById('name_driver_2').innerText = data[1]?.NAME;
             });
         document.querySelector('body main #sec-f1-team').style.display = 'none';
         document.querySelector('body main #sec-f1-team-info').style.display = 'flex';

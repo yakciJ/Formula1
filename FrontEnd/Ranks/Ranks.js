@@ -8,7 +8,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '', // Thay bằng mật khẩu của bạn
-    database: 'rank' // Thay bằng tên database của bạn
+    database: 'f1' // Thay bằng tên database của bạn
 });
 
 // Kết nối đến MySQL
