@@ -13,7 +13,7 @@ VALUES
 (5,'19 - 21 Apr 2024','Shanghai International Circuit, Shanghai','/Image/Countryflag/Flag_of_China.svg.png'),
 (6,'03 - 05 May 2024','Miami International Autodrome, Miami','/Image/Countryflag/Flag_of_Miami.png'),
 (7,'17 - 19 May 2024','Autodromo Internazionale Enzo e Dino Ferrari, Imola','/Image/Countryflag/Flag_of_Emilia-Romagna.svg.png'),
-(8,'24 - 26 May 2024','Circuit de Monaco, Monaco,'/Image/Countryflag/Flag_of_Monaco.png'),
+(8,'24 - 26 May 2024','Circuit de Monaco, Monaco','/Image/Countryflag/Flag_of_Monaco.png'),
 (9,'07 - 09 Jun 2024','Circuit Gilles-Villeneuve, Montréal','/Image/Countryflag/Flag_of_Canada.svg.png'),
 (10,'21 - 23 Jun 2024','Circuit de Barcelona-Catalunya, Barcelona','/Image/Countryflag/Flag_of_Spain.svg.png'),
 (11,'28 - 30 Jun 2024','Red Bull Ring, Spielberg','/Image/Countryflag/Flag_of_Austria.svg.png'),
