@@ -1,4 +1,6 @@
 var cluster = require('cluster');
+const mysql = require('mysql2');
+
 // Make server reset every time it crash.
 if (cluster.isMaster) {
 
