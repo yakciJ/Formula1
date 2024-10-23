@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="Image/Static/F1-logo.png" />
@@ -38,30 +39,30 @@
         </section>
     </header>
         <div id="main-content">
-            <label for="raceTrack" class="font" id ="raceLabel">Kết quả vòng đua</label>
-            <form action="/ket-qua" method="POST" id="raceForm" >
-                <select name="race" id="raceSelect" onchange="updateRaceLabel();document.getElementById('raceForm').submit()">
-                    <option value="" disabled selected >Chọn tên đường đua</option>
-                    <option value="1">BAHRAIN</option>
-                    <option value="2">SAUDI ARABIA</option>
-                    <option value="3">AUSTRALIA</option>
-                    <option value="4">JAPAN</option>
-                    <option value="5">CHINA</option>
-                    <option value="6">MIAMI</option>
-                    <option value="7">EMILIA-ROMAGNA</option>
-                    <option value="8">MONACO</option>
-                    <option value="9">CANADA</option>
-                    <option value="10">SPAIN</option>
-                    <option value="11">AUSTRIA</option>
-                    <option value="12">GREAT BRITAIN</option>
-                    <option value="13">HUNGARY</option>
-                    <option value="14">BELGIUM</option>
-                    <option value="15">NETHERLANDS</option>
-                    <option value="16">ITALY</option>
-                    <option value="17">AZERBAIJAN</option>
-                    <option value="18">SINGAPORE</option>
-                </select>
-            </form>
+            <label for="raceTrack" class="font" id="raceLabel">Kết quả vòng đua tại <%= raceInfo.COUNTRY %></label>
+                <form id="raceForm">
+                    <select name="race" id="raceSelect" onchange="redirectToRaceResult();">
+                        <option value="" disabled selected>Chọn tên đường đua</option>
+                        <option value="1">BAHRAIN</option>
+                        <option value="2">SAUDI ARABIA</option>
+                        <option value="3">AUSTRALIA</option>
+                        <option value="4">JAPAN</option>
+                        <option value="5">CHINA</option>
+                        <option value="6">MIAMI</option>
+                        <option value="7">EMILIA-ROMAGNA</option>
+                        <option value="8">MONACO</option>
+                        <option value="9">CANADA</option>
+                        <option value="10">SPAIN</option>
+                        <option value="11">AUSTRIA</option>
+                        <option value="12">GREAT BRITAIN</option>
+                        <option value="13">HUNGARY</option>
+                        <option value="14">BELGIUM</option>
+                        <option value="15">NETHERLANDS</option>
+                        <option value="16">ITALY</option>
+                        <option value="17">AZERBAIJAN</option>
+                        <option value="18">SINGAPORE</option>
+                    </select>
+                </form>
                 <div class="race-header">
                     <% if (raceInfo) { %>
                         <h2>Trường đua: <%= raceInfo.COUNTRY %></h2>
@@ -128,19 +129,14 @@
             </div>
         </div>
     <script>
-        function updateRaceLabel() {
-            var raceSelect = document.getElementById("raceSelect");
-            var selectedRace = raceSelect.options[raceSelect.selectedIndex].text;
-            document.getElementById("raceLabel").innerText = "Kết quả vòng đua tại " + selectedRace;
-            localStorage.setItem('selectedRace', selectedRace);
-            document.getElementById('raceForm').submit();
-        }
         
-        window.onload = function() {
-            var storedRace = localStorage.getItem('selectedRace');
-            if (storedRace) {
-                document.getElementById("raceLabel").innerText = "Kết quả vòng đua tại " + storedRace;
-            }
-        }
+        function redirectToRaceResult() {
+    const selectElement = document.getElementById('raceSelect');
+    const selectedValue = selectElement.value;
+    if (selectedValue) {
+        window.location.href = `/ket-qua/${selectedValue}`;
+    }
+    console.log("AAAAAAAAAAAAA")
+}
     </script>
 </body>

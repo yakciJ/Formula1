@@ -22,8 +22,8 @@ module.exports = function (app) {
                 });
             });
     });
-    app.post('/ket-qua', (req, res) => {
-        const race = req.body.race; 
+    app.get('/ket-qua/:id', (req, res) => {
+        const race = req.params.id; 
         const raceQuery = 'SELECT * FROM raceinfo WHERE id = ?';
         const resultQuery = 'SELECT * FROM raceresult WHERE race = ?';
         const con = require('./dbcon');
