@@ -261,7 +261,16 @@ body {
     color: red;
 }
 
-.sign-in-btn2 {
+.false-password {
+    color: red;
+    font-size: 12px;
+    text-decoration: none;
+    display: none;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.reg-btn {
     width: 100%;
     padding: 10px;
     background-color: red;
@@ -273,6 +282,6 @@ body {
     font-weight: bold;
 }
 
-.sign-in-btn2:hover {
+.reg-btn:hover {
     background-color: #cc0000;
 }

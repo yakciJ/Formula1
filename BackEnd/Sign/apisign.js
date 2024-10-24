@@ -10,13 +10,10 @@ module.exports = function (app) {
 
   // window.location.href = `/sign/check?email=${email}&password=${password}`;
 
-  
-  const db = require('../dbcon');
-
   app.get('/sign/check', (req, res) => {
     const email = req.query.email;
     const password = req.query.password;
-
+    const db = require('../dbcon');
     db.query("SELECT * FROM USER WHERE email = ? AND password=?", [email, password], (err, results) => {
       if (err) {
         console.error(err);
