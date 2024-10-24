@@ -245,6 +245,15 @@ body {
     right: -25px;
     cursor: pointer;
 }
+.false-password {
+    color: red;
+    font-size: 12px;
+    text-decoration: none;
+    display: none;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
 .forgot-password {
     color: #333;
     font-size: 12px;

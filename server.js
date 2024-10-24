@@ -42,9 +42,11 @@ else {
 
     // Serve the main HTML file
     app.get('/', (req, res) => {
+        res.sendFile(path.join(__dirname, 'FrontEnd', 'Sign', 'sign.html'));
+    });
+    app.get('/home', (req, res) => {
         res.sendFile(path.join(__dirname, 'FrontEnd', 'Home', 'home.html'));
     });
-
 
 
     // Start the server
