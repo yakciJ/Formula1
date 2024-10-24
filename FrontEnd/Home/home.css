@@ -14,10 +14,15 @@ body {
 .section1 {
     background-color: #fff;
     height: 50%;
-
+    display:flex;
+    align-items: center;    
+    justify-content:end;
+    position: relative;
 }
 
 .logotop {
+    position: absolute;
+    left: 45%;
     display: flex;
     padding: 0;
     justify-content: center;
@@ -26,6 +31,31 @@ body {
     height: 100%;
     margin: 0;
 }
+
+.sign-in-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a; /* Màu nền của nút */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    height: 60%;
+}
+
+.sign-in-btn .icon {
+    margin-right: 10px; /* Khoảng cách giữa biểu tượng và chữ */
+    font-size: 18px;
+}
+
+.sign-in-btn:hover {
+    background-color: #333; /* Màu nền khi hover */
+}
+
 
 /* nút Home */
 
