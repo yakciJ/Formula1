@@ -1,0 +1,9 @@
+use F1;
+CREATE TABLE USER (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+
+use F1;
+INSERT INTO USER (email, password) VALUES ('hoang@gmail.com', 'abc');
