@@ -13,7 +13,7 @@ function submitForm() {
     })
     .then(data => {
         if (data.success) {
-            window.location.href = '/home'; 
+            window.location.href = '/home2'; 
         }
     })
     .catch(error => {

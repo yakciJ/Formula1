@@ -35,12 +35,16 @@ body {
 
 .section1 {
     background-color: #fff;
-    height: 3.5vw;
-    margin-top: 0;
-
+    height: 50%;
+    display:flex;
+    align-items: center;    
+    justify-content:end;
+    position: relative;
 }
 
 .logotop {
+    position: absolute;
+    left: 45%;
     display: flex;
     padding: 0;
     justify-content: center;
@@ -48,6 +52,49 @@ body {
     background-color: none;
     height: 100%;
     margin: 0;
+}
+
+.sign-in-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a; /* Màu nền của nút */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    height: 60%;
+}
+
+.sign-in-btn  {
+    margin-right: 10px; /* Khoảng cách giữa biểu tượng và chữ */
+    font-size: 15px;
+    position: relative;
+}
+.icon{
+    margin-right: 10px; /* Khoảng cách giữa biểu tượng và chữ */
+    font-size: 30px;
+}
+.hover-text {
+    width: 100%;
+    display: none; /* Ẩn div này theo mặc định */
+    position: absolute; /* Để định vị nó bên dưới nút */
+    bottom: -130%; /* Điều chỉnh khoảng cách từ nút đến div */
+    background-color: black; /* Hoặc màu nền bạn muốn */
+    border: 1px solid #ccc; /* Tùy chọn thêm viền */
+    
+    z-index: 1; /* Đảm bảo nó nằm trên các thành phần khác */
+}
+
+.sign-in-btn:hover .hover-text {
+    display: block; /* Hiển thị khi hover */
+}
+
+.sign-in-btn:hover {
+    background-color: #333; /* Màu nền khi hover */
 }
 
 /* nút Home */

@@ -17,6 +17,16 @@ module.exports = function (app) {
             }
         });
     })
+    app.get('/duong-dua2', (req,res) => {
+        const con = require('./dbcon');
+        con.query('Select ID, Name, BasicImage from tracks', function(err, result, fields){
+            if(err){
+                console.log('Error while performing Query.');
+            } else{
+                res.render(path.join(FrontEnd, 'Tracks', 'tracks2.ejs'), {result: result});
+            }
+        });
+    })
     // render track.ejs
     app.get('/duong-dua/:id', (req, res) => {
         const con = require('./dbcon');

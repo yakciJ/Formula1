@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="Image/Static/F1-logo.png" />
-    <link rel="stylesheet" href="FrontEnd/Tracks/tracks.css">
-    <title>Trường đua</title>
+    <link rel="stylesheet" href="FrontEnd/Tracks/tracks2.css">
+    <title><%= result[0].Name %></title>
 </head>
 
 
@@ -17,10 +18,10 @@
                 <li class="li1"><a href="https://www.formula1.com" target="_blank"><img src="/Image/Logo/formulaf1.png" alt="LogoF1" class="li1"></a></li>
             </ul> 
             <button type="button" class="sign-in-btn" onclick="window.location.href='/sign'">
-                <span class="icon">👨‍💻</span>
-                USER
+                <span class="icon">👮‍♂️</span>
+                ADMIN
                 <div class="hover-text">
-                    <p onclick="window.location.href='/sign'">Thoát</p>
+                    <p onclick="logOut()">Thoát</p>
                     
                 </div>
             </button>
@@ -28,34 +29,55 @@
         <section class="section2">
             <ul class="chucnang">
                 <li class="truongdua">
-                    <a href="/home" class="back-home"><img src="/Image/Logo/f1logo2.png" alt="Home"></a>
+                    <a href="/home2" class="back-home"><img src="/Image/Logo/f1logo2.png" alt="Home"></a>
                 </li>
                 <li class="thongtin">
                     <a href="#" class="link-thongtin">Thông tin</a>
                     <ul class="sub-thongtin">
-                        <li><a href="/driver">Tay đua</a></li>
-                        <li><a href="/team" >Đội đua</a></li>  
+                        <li><a href="/driver2">Tay đua</a></li>
+                        <li><a href="/team2" >Đội đua</a></li>  
                     </ul>
                 </li>
-                <li class="truongdua"><a href="/duong-dua" class="link-thongtin">Trường đua</a></li>
+                <li class="truongdua"><a href="/duong-dua2" class="link-thongtin">Trường đua</a></li>
                 <li class="truongdua"><a href="/FrontEnd/Schedule/lichthidau.html" class="link-thongtin">Lịch thi đấu</a></li>
                 <li class="truongdua"><a href="/ket-qua" class="link-thongtin">Kết quả</a></li>
                 <li class="truongdua"><a href="/FrontEnd/Ranks/Ranks.html" class="link-thongtin">Xếp hạng</a></li>
             </ul> 
         </section>
     </header>
-    <div id="main-content">
-            <% for (let i = 0; i < result.length; i+=4){ %>
-                <div class="row">
-                <% for (let j = i; j < i+4; j++){ %>
-                    <a href="/duong-dua/<%= result[j].ID %>" class="tracks">
-                        <img class="tracks-basic" src="<%= result[j].BasicImage %>" alt="">
-                        <div class="tracks-name"><%= result[j].Name %></div>    
-                    </a>
-                <% } %>
+    <div id="main-content2">
+        <a href="/duong-dua" class="back">&larr; Quay lại</a>
+        <div class="content">
+            <img class="detail-img" src="<%= result[0].DetailImage %>" alt="">
+            <div >
+                <div class="track-datas">
+                    <div class="title">Tên trường đua:</div>
+                    <div class="track-data"><%= result[0].Name %></div>
                 </div>
-            <% } %>
+                <div class="track-datas">
+                    <div class="title">Năm đầu tiên tổ chức:</div>
+                    <div class="track-data"><%= result[0].FirstGP %></div>
+                </div>
+                <div class="track-datas">
+                    <div class="title">Số vòng:</div>
+                    <div class="track-data"><%= result[0].NumOfLaps %></div>
+                </div>
+                <div class="track-datas">
+                    <div class="title">Độ dài 1 vòng:</div>
+                    <div class="track-data"><%= result[0].Lenght %> km</div>
+                </div>
+                <div class="track-datas">
+                    <div class="title">Tổng chặng đua:</div>
+                    <div class="track-data"><%= result[0].TotalDistance %> km</div>
+                </div>
+                <div class="track-datas">
+                    <div class="title">Kỷ lục 1 vòng nhanh nhất:</div>
+                    <div class="track-data"><%= result[0].LapRecord %></div>
+                </div>     
+            </div>
+        </div>
     </div>
+    
     
     <div id="footer">
         <div style="display: flex;">
@@ -81,5 +103,5 @@
         </div>
     </div>
 
-    <script src="FrontEnd/Tracks/tracks.js"></script>
+    <script src="FrontEnd/Tracks/tracks2.js"></script>
 </body>

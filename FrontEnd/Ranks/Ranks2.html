@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- commit thu 100 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/FrontEnd/Ranks/Ranks2.css">
+
+    <title>Home Page</title>
+</head>
+
+<body>
+    <header class="header">
+        <section class="section1">
+            <ul class="logotop">
+                <li class="li1"><a href="https://www.fia.com" target="_blank"><img src="/Image/Logo/fialogo.png"
+                            alt="LogoFIA" class="li1"></a></li>
+                <li class="li1"><a href="https://www.formula1.com" target="_blank"><img src="/Image/Logo/formulaf1.png"
+                            alt="LogoF1" class="li1"></a></li>
+            </ul>
+            <button type="button" class="sign-in-btn">
+                <span class="icon">👮‍♂️</span>
+                ADMIN
+                <div class="hover-text">
+                    <p onclick="window.location.href='/sign'">Thoát</p>
+
+                </div>
+            </button>
+
+
+
+        </section>
+        <section class="section2">
+            <a class="back-home" href="/home2"><img src="/Image/Logo/f1logo2.png" alt="abc" class="li1"></a>
+            <ul class="chucnang">
+                <li class="thongtin">
+                    <a href="#" class="link-thongtin">Thông tin</a>
+                    <ul class="sub-thongtin">
+                        <li><a href="/driver2">Tay đua</a></li>
+                        <li><a href="/team2">Đội đua</a></li>
+                    </ul>
+                </li>
+                <li class="truongdua"><a href="/duong-dua2" class="link-thongtin">Trường đua</a></li>
+                <li class="truongdua"><a href="/FrontEnd/Schedule/lichthidau2.html" class="link-thongtin">Lịch thi
+                        đấu</a></li>
+                <li class="truongdua"><a href="/ket-qua2" class="link-thongtin">Kết quả</a></li>
+                <li class="truongdua"><a href="/FrontEnd/Ranks/Ranks2.html" class="link-thongtin">Xếp hạng</a></li>
+            </ul>
+        </section>
+    </header>
+    <main class="driver_standings" id="driver_standings">
+        <button type="button" class="fix-btn" onclick="window.location.href='/FrontEnd/Ranks/fix_rank2.html'">SỬA</button>
+        <h1>2024 Driver Standings</h1>
+        <div id="f1-table"></div>
+    </main>
+
+    <!-- Correct path to the JavaScript file -->
+    <script>
+        // Lấy dữ liệu từ server và xuất ra bảng
+        fetch('/ranks/check')
+            .then(response => response.json())
+            .then(data => {
+                let table = `
+                    <table border="1">
+                        <tr>
+                            <th>POS</th>
+                            <th>DRIVER</th>
+                            <th>NATIONALITY</th>
+                            <th>CAR</th>
+                            <th>PTS</th>
+                        </tr>
+                `;
+
+                data.forEach(row => {
+                    table += `
+                        <tr>
+                            <td>${row.POSITION}</td>
+                            <td>${row.DRIVER}</td>
+                            <td>${row.NATIONALITY}</td>
+                            <td>${row.CAR}</td>
+                            <td>${row.POINTS}</td>
+                        </tr>
+                    `;
+                });
+
+                table += '</table>';
+                document.getElementById('f1-table').innerHTML = table;
+            })
+            .catch(err => console.error('Error fetching data:', err));
+    </script>
+</body>
+
+</html>

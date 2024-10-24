@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="Image/Static/F1-logo.png" />
-    <link rel="stylesheet" href="FrontEnd/Tracks/tracks.css">
-    <link rel="stylesheet" href="FrontEnd/RaceResults/raceresults.css">
+    <link rel="stylesheet" href="FrontEnd/Tracks/tracks2.css">
+    <link rel="stylesheet" href="FrontEnd/RaceResults/raceresults2.css">
     <title>Kết quả</title>
 </head>
 
@@ -19,10 +19,10 @@
                 <li class="li1"><a href="https://www.formula1.com" target="_blank"><img src="/Image/Logo/formulaf1.png" alt="LogoF1" class="li1"></a></li>
             </ul>
             <button type="button" class="sign-in-btn" onclick="window.location.href='/sign'">
-                <span class="icon">👨‍💻</span>
-                USER
+                <span class="icon">👮‍♂️</span>
+                ADMIN
                 <div class="hover-text">
-                    <p onclick="window.location.href='/sign'">Thoát</p>
+                    <p onclick="logOut()">Thoát</p>
                     
                 </div>
             </button> 
@@ -30,19 +30,19 @@
         <section class="section2">
             <ul class="chucnang">
                 <li class="truongdua">
-                    <a href="/home" class="back-home"><img src="/Image/Logo/f1logo2.png" alt="Home"></a>
+                    <a href="/home2" class="back-home"><img src="/Image/Logo/f1logo2.png" alt="Home"></a>
                 </li>
                 <li class="thongtin">
                     <a href="#" class="link-thongtin">Thông tin</a>
                     <ul class="sub-thongtin">
-                        <li><a href="/driver" id="tay-dua">Tay đua</a></li>
-                        <li><a href="/team" id="doi-dua">Đội đua</a></li>  
+                        <li><a href="/driver2" id="tay-dua">Tay đua</a></li>
+                        <li><a href="/team2" id="doi-dua">Đội đua</a></li>  
                     </ul>
                 </li>
-                <li class="truongdua"><a href="/duong-dua" class="link-thongtin">Trường đua</a></li>
-                <li class="truongdua"><a href="/FrontEnd/Schedule/lichthidau.html" class="link-thongtin">Lịch thi đấu</a></li>
-                <li class="truongdua"><a href="/ket-qua" class="link-thongtin">Kết quả</a></li>
-                <li class="truongdua"><a href="/FrontEnd/Ranks/Ranks.html" class="link-thongtin">Xếp hạng</a></li>
+                <li class="truongdua"><a href="/duong-dua2" class="link-thongtin">Trường đua</a></li>
+                <li class="truongdua"><a href="/FrontEnd/Schedule/lichthidau2.html" class="link-thongtin">Lịch thi đấu</a></li>
+                <li class="truongdua"><a href="/ket-qua2" class="link-thongtin">Kết quả</a></li>
+                <li class="truongdua"><a href="/FrontEnd/Ranks/Ranks2.html" class="link-thongtin">Xếp hạng</a></li>
             </ul> 
         </section>
     </header>
@@ -142,7 +142,7 @@
     const selectElement = document.getElementById('raceSelect');
     const selectedValue = selectElement.value;
     if (selectedValue) {
-        window.location.href = `/ket-qua/${selectedValue}`;
+        window.location.href = `/ket-qua2/${selectedValue}`;
     }
     console.log("AAAAAAAAAAAAA")
 }

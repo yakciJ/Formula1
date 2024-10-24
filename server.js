@@ -66,5 +66,10 @@ else {
     require(path.join(__dirname, '/BackEnd/Team/apiteam.js'))(app);
     require(path.join(__dirname, '/BackEnd/Sign/apisign.js'))(app);
     require(path.join(__dirname, '/BackEnd/Reg/apireg.js'))(app);
+
+    require(path.join(__dirname, '/BackEnd/Home/apihome2.js'))(app);
+    require(path.join(__dirname, '/BackEnd/Driver/apidriver2.js'))(app);
+    require(path.join(__dirname, '/BackEnd/Team/apiteam2.js'))(app);
+    require(path.join(__dirname, '/BackEnd/Rank/apiRanks2.js'))(app);
 }
 
