@@ -8,7 +8,7 @@ document.querySelectorAll('body main #sec-f1-driver ul li').forEach(function (it
             .then(data => {
                 document.getElementById('info-img').src = data[0]?.IMG_URL;
                 document.getElementById('info-name').innerText = data[0]?.NAME;
-                document.getElementById('info-team').innerText = data[0]?.TEAM;
+                document.getElementById('info-team').innerText = data[0]?.TEAM_NAME;
                 document.getElementById('info-country').innerText = data[0]?.COUNTRY;
                 document.getElementById('info-podiums').innerText = data[0]?.PODIUMS;
                 document.getElementById('info-points').innerText = data[0]?.POINTS;

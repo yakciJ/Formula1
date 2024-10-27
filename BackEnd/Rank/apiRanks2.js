@@ -33,5 +33,37 @@ module.exports = function (app) {
         res.json(results);
     });
   });
+  app.get('/ranks/delete', (req, res) => {
+    const pts = req.query.pts;
+    
+    const db = require('../dbcon');
+
+    const query = 'DELETE FROM RANKS WHERE POSITION = ?';
+    db.query(query,[pts], (err, results) => {
+        if (err) {
+            res.status(500).send('Error retrieving data from database');
+            return;
+        }
+        res.json(results);
+    });
+  });
+  app.get('/ranks/add', (req, res) => {
+    const pts = req.query.pts;
+    const drv= req.query.drv;
+    const ntl= req.query.ntl;
+    const car= req.query.car;
+    const pn= req.query.pn;
+    
+    const db = require('../dbcon');
+
+    const query = 'INSERT INTO RANKS(POSITION,DRIVER,NATIONALITY,CAR,POINTS) VALUE (?,?,?,?,?)';
+    db.query(query,[pts,drv, ntl,car,pn], (err, results) => {
+        if (err) {
+            res.status(500).send('Error retrieving data from database');
+            return;
+        }
+        res.json(results);
+    });
+  });
 
 }

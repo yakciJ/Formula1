@@ -1,289 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- commit thu 100 -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiển thị dữ liệu xếp hạng mùa mới</title>
-    
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            height: 100%;
-        }
+    <link rel="stylesheet" href="/FrontEnd/Ranks/Ranks.css">
 
-        /* phần HEADER */
-        /* LOGO-TOP */
-        .header {
-            height: 150px;
-        }
-
-        .section1 {
-            background-color: #fff;
-            height: 50%;
-        }
-
-        .logotop {
-            display: flex;
-            padding: 0;
-            justify-content: center;
-            list-style-type: none;
-            background-color: none;
-            height: 100%;
-            margin: 0;
-        }
-
-        /* nút Home */
-        .back-home {
-            position: absolute;
-            left: 7%;
-            top: 25%;
-            height: 50%;
-        }
-
-        .back-home:hover {
-            height: 55%;
-        }
-
-        /* 5 nút chức năng */
-        .section2 {
-            position: relative;
-            background-color: red;
-            height: 50%;
-            display: flex;
-            justify-content: center;
-        }
-
-        .chucnang {
-            list-style-type: none;
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        .li1 {
-            height: 100%;
-            width: auto;
-        }
-
-        .thongtin {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0px 50px;
-        }
-
-        .link-thongtin {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            text-transform: none;
-            font-weight: bold;
-        }
-
-        .sub-thongtin {
-            list-style-type: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            padding: 10px 0 10px 0;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-            display: none;
-            z-index: 1;
-        }
-
-        .thongtin:hover {
-            background-color: black;
-        }
-
-        .sub-thongtin li {
-            margin: 10px;
-        }
-
-        .sub-thongtin li a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: none;
-            font-weight: bold;
-        }
-
-        .thongtin:hover .sub-thongtin {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .sub-thongtin li a:hover {
-            text-decoration: underline;
-            text-decoration-color: red;
-            text-underline-offset: 4px;
-            text-decoration-thickness: 2px;
-        }
-
-        .truongdua {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 50px 0 50px;
-        }
-
-        .truongdua:hover {
-            background-color: black;
-        }
-
-        .main-content {
-            font-family: Arial, sans-serif;
-            margin-left: 100px;
-            margin-right: 100px;
-            margin-top: 50px;
-            background-color: transparent;
-        }
-
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        label {
-            font-size: 18px;
-            margin-right: 10px;
-        }
-
-        select, button {
-            padding: 10px;
-            font-size: 16px;
-            margin: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        select {
-            padding: 10px;
-            font-size: 16px;
-            margin: 10px;
-            border-radius: 5px;
-            border: none; /* Bỏ viền */
-            outline: none; /* Bỏ viền bao khi bấm vào */
-            background-color: #fff; /* Nền trắng */
-        }
-
-        button {
-            padding: 10px;
-            font-size: 16px;
-            margin-left: 20px; /* Căn chỉnh khoảng cách */
-            border: 2px solid red; /* Viền đỏ */
-            color: black; /* Chữ đen */
-            background-color: transparent; /* Không nền */
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.4s ease; /* Tăng thời gian chuyển đổi */
-        }
-
-        button:hover {
-            transform: scale(1.2); /* Tăng kích thước nút 20% khi di chuột vào */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng */
-        }
-
-        #result {
-            margin-top: 20px;
-        }
-
-        /* Tùy chỉnh bảng */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            background-color: white;
-        }
-
-        th, td {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            text-align: center;
-            /* Cố định kích thước ô */
-            width: 150px; /* Chiều rộng cố định cho ô */
-            height: 50px; /* Chiều cao cố định cho ô */
-            font-size: 16px; /* Kích thước văn bản cố định */
-            overflow: hidden; /* Ẩn văn bản tràn */
-            white-space: nowrap; /* Ngăn ngừa xuống dòng */
-            text-overflow: ellipsis; /* Hiệu ứng dấu ba chấm khi văn bản quá dài */
-        }
-
-        th {
-            background-color: red;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        td {
-            color: #333;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        tr:hover {
-            background-color: #e0e0e0;
-        }
-
-        /* Bảng tự động điều chỉnh kích thước */
-        @media screen and (max-width: 768px) {
-            table, th, td {
-                display: block;
-                width: 100%;
-            }
-
-            th, td {
-                text-align: left;
-                padding-left: 10px;
-            }
-
-            th {
-                background-color: #333;
-                color: white;
-            }
-
-            tr {
-                margin-bottom: 15px;
-                display: block;
-            }
-
-            tr:nth-child(even) {
-                background-color: transparent;
-            }
-        }
-    </style>
+    <title>Home Page</title>
 </head>
+
 <body>
     <header class="header">
         <section class="section1">
             <ul class="logotop">
-                <li class="li1 logo-top"><a href="https://www.fia.com" target="_blank"><img
-                            src="/Image/Logo/fialogo.png" alt="LogoFIA" class="li1 logo-top"></a></li>
-
-                <li class="li1 logo-top"><a href="https://www.formula1.com" target="_blank"><img
-                            src="/Image/Logo/formulaf1.png" alt="LogoF1" class="li1 logo-top"></a></li>
+                <li class="li1"><a href="https://www.fia.com" target="_blank"><img src="/Image/Logo/fialogo.png"
+                            alt="LogoFIA" class="li1"></a></li>
+                <li class="li1"><a href="https://www.formula1.com" target="_blank"><img src="/Image/Logo/formulaf1.png"
+                            alt="LogoF1" class="li1"></a></li>
             </ul>
+            <button type="button" class="sign-in-btn">
+                <span class="icon">👨‍💻</span>
+                USER
+                <div class="hover-text">
+                    <p onclick="window.location.href='/sign'">Thoát</p>
+
+                </div>
+            </button>
+
+
+
         </section>
         <section class="section2">
-            <a class="back-home" href="/home"><img src="/Image/Logo/f1logo2.png" alt="F1 Logo" class="li1 header-logo"></a>
+            <a class="back-home" href="/home"><img src="/Image/Logo/f1logo2.png" alt="abc" class="li1"></a>
             <ul class="chucnang">
                 <li class="thongtin">
                     <a href="#" class="link-thongtin">Thông tin</a>
                     <ul class="sub-thongtin">
                         <li><a href="/driver">Tay đua</a></li>
                         <li><a href="/team">Đội đua</a></li>
-                        <li><a href="/schedule">Lich Thi Dau</a></li>
                     </ul>
                 </li>
                 <li class="truongdua"><a href="/duong-dua" class="link-thongtin">Trường đua</a></li>
@@ -294,121 +49,46 @@
             </ul>
         </section>
     </header>
-
-    <main class="main-content">
-        <h1>Tìm kiếm kết quả cuộc đua F1 các năm</h1>
+    <main class="driver_standings" id="driver_standings">
         
-        <label for="year">Kết quả năm:</label>
-        <select id="year">
-            <option value=""></option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
-            <option value="2021">2021</option>
-            <option value="2020">2020</option>
-            <option value="2019">2019</option>
-            <option value="2018">2018</option>
-            <option value="2017">2017</option>
-            <option value="2016">2016</option>
-            <option value="2015">2015</option>
-            <option value="2014">2014</option>
-            <option value="2013">2013</option>
-            <option value="2012">2012</option>
-            <option value="2011">2011</option>
-            <option value="2010">2010</option>
-            <option value="2009">2009</option>
-            <option value="2008">2008</option>
-            <option value="2007">2007</option>
-            <option value="2006">2006</option>
-            <option value="2005">2005</option>
-            <option value="2004">2004</option>
-            <option value="2003">2003</option>
-            <option value="2002">2002</option>
-            <option value="2001">2001</option>
-            <option value="2000">2000</option>
-            <option value="1999">1999</option>
-            <option value="1998">1998</option>
-            <option value="1997">1997</option>
-            <option value="1996">1996</option>
-            <option value="1995">1995</option>
-        </select>
-        <button onclick="fetchData()">Tìm kiếm</button>
+        <h1>2024 Driver Standings</h1>
+        <div id="f1-table"></div>
+    </main>
 
-        <div id="result"></div>
-    </div>
-
+    <!-- Correct path to the JavaScript file -->
     <script>
-        // Hàm để lấy dữ liệu từ backend
-        function fetchData() {
-            const year = document.getElementById('year').value;
+        // Lấy dữ liệu từ server và xuất ra bảng
+        fetch('/ranks/check')
+            .then(response => response.json())
+            .then(data => {
+                let table = `
+                    <table border="1">
+                        <tr>
+                            <th>POS</th>
+                            <th>DRIVER</th>
+                            <th>NATIONALITY</th>
+                            <th>CAR</th>
+                            <th>PTS</th>
+                        </tr>
+                `;
 
-            // Kiểm tra người dùng đã chọn năm chưa
-            if (!year) {
-                alert('Vui lòng chọn năm cần tìm kiếm.');
-                return;
-            }
-
-            // Gửi Post yêu cầu tới backend
-            fetch('http://localhost:6969/api/get-data', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ year: year }) // Gửi đi năm cần tìm
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => displayData(data)) // Hiển thị dữ liệu
-            .catch(error => console.error('Error:', error));
-        }
-
-        // Hiển thị dữ liệu qua table
-        function displayData(data) {
-            let resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = ''; // Loại bỏ kết quả trước đó
-
-            if (data.length > 0) {
-                let table = '<table><tr>';
-
-                // Tùy chỉnh tên cột
-                const customHeaders = {
-                    POSITION: 'Xếp hạng',
-                    DRIVER: 'Tên tay đua',
-                    CONSTRUCTOR: 'Tên đội đua',
-                    POINTS: 'Điểm',
-                    WINS: 'Số lần về nhất'
-                };
-
-                // Tạo hàng đầu tiên của bảng gồm tên các cột
-                Object.keys(data[0]).forEach(key => {
-                    if (key !== 'YEAR') { // Bỏ qua cột năm
-                        table += `<th>${customHeaders[key] || key}</th>`;
-                    }
-                });
-                table += '</tr>';
-
-                // Tạo các dòng của bảng
                 data.forEach(row => {
-                    table += '<tr>';
-                    Object.keys(row).forEach(key => {
-                        if (key !== 'YEAR') { // Bỏ qua cột năm
-                            table += `<td>${row[key]}</td>`;
-                        }
-                    });
-                    table += '</tr>';
+                    table += `
+                        <tr>
+                            <td>${row.POSITION}</td>
+                            <td>${row.DRIVER}</td>
+                            <td>${row.NATIONALITY}</td>
+                            <td>${row.CAR}</td>
+                            <td>${row.POINTS}</td>
+                        </tr>
+                    `;
                 });
 
                 table += '</table>';
-                resultDiv.innerHTML = table; // Chèn bảng vào thành phần "result" 
-            } else {
-                resultDiv.innerHTML = '<p>Không có dữ liệu về năm cần tìm kiếm.</p>';
-            }
-        }
+                document.getElementById('f1-table').innerHTML = table;
+            })
+            .catch(err => console.error('Error fetching data:', err));
     </script>
 </body>
-</html>
 
+</html>

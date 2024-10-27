@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/FrontEnd/Ranks/Ranks2.css">
+    <link rel="stylesheet" href="/FrontEnd/Ranks/fix_rank2.css">
 
     <title>Home Page</title>
 </head>
@@ -49,48 +50,37 @@
             </ul>
         </section>
     </header>
-    <main class="driver_standings" id="driver_standings">
-        <button type="button" class="fix-btn" onclick="window.location.href='/FrontEnd/Ranks/fix_rank2.html'">SỬA</button>
-        <button type="button" class="fix-btn" onclick="window.location.href='/FrontEnd/Ranks/delete_rank2.html'">XOÁ</button>
-        <button type="button" class="fix-btn" onclick="window.location.href='/FrontEnd/Ranks/add_rank2.html'">THÊM</button>
-        <h1>2024 Driver Standings</h1>
-        <div id="f1-table"></div>
-    </main>
-
-    <!-- Correct path to the JavaScript file -->
-    <script>
-        // Lấy dữ liệu từ server và xuất ra bảng
-        fetch('/ranks/check')
-            .then(response => response.json())
-            .then(data => {
-                let table = `
-                    <table border="1">
-                        <tr>
-                            <th>POS</th>
-                            <th>DRIVER</th>
-                            <th>NATIONALITY</th>
-                            <th>CAR</th>
-                            <th>PTS</th>
-                        </tr>
-                `;
-
-                data.forEach(row => {
-                    table += `
-                        <tr>
-                            <td>${row.POSITION}</td>
-                            <td>${row.DRIVER}</td>
-                            <td>${row.NATIONALITY}</td>
-                            <td>${row.CAR}</td>
-                            <td>${row.POINTS}</td>
-                        </tr>
-                    `;
-                });
-
-                table += '</table>';
-                document.getElementById('f1-table').innerHTML = table;
-            })
-            .catch(err => console.error('Error fetching data:', err));
-    </script>
+    <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="category">POSITION:</label>
+            <input type="number" id="pts" >
+          </div>
+          <div class="form-group">
+            <label for="status">DRIVER:</label>
+            <input type="text" id="drv" >
+          </div>
+          <div class="form-group">
+            <label for="dayStart">NATIONALITY:</label>
+            <input type="text" id="ntl" >
+          </div>
+          <div class="form-group">
+            <label for="dayEnd">CAR:</label>
+            <input type="text" id="car" >
+          </div>
+          <div class="form-group">
+            <label for="eventName">POINT:</label>
+            <input type="number" id="pn" >
+          </div>
+          
+          <!-- Add other fields as needed -->
+        </form>
+      </div>
+  
+      <div class="modal-footer">
+        <button class="save-btn" onclick="addInfo()">Save</button>
+      </div>
+      <script src="/BackEnd/Rank/fix_rank2.js"></script>
 </body>
 
 </html>
